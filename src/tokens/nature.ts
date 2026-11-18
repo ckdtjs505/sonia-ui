@@ -1,8 +1,7 @@
-import { createTheme } from "@shopify/restyle";
 import light, { makeColors } from "./light";
 
 // 숲 — 이끼와 잎사귀의 차분한 초록
-const theme = createTheme({
+const theme = {
   ...light,
   colors: makeColors({
     background: "#EDF1E8",
@@ -17,6 +16,6 @@ const theme = createTheme({
     flame: "#E0571F",
   }),
   barStyle: "dark",
-});
+};
 
 export default theme;

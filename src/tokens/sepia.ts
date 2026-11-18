@@ -1,8 +1,7 @@
-import { createTheme } from "@shopify/restyle";
 import light, { makeColors } from "./light";
 
 // 세피아 — 오래된 종이와 잉크
-const theme = createTheme({
+const theme = {
   ...light,
   colors: makeColors({
     background: "#F3EADB",
@@ -17,6 +16,6 @@ const theme = createTheme({
     flame: "#D2541C",
   }),
   barStyle: "dark",
-});
+};
 
 export default theme;

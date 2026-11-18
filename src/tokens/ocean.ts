@@ -1,8 +1,7 @@
-import { createTheme } from "@shopify/restyle";
 import light, { makeColors } from "./light";
 
 // 바다 — 깊은 밤바다의 남색
-const theme = createTheme({
+const theme = {
   ...light,
   colors: makeColors({
     background: "#0B1822",
@@ -17,6 +16,6 @@ const theme = createTheme({
     flame: "#FF7A45",
   }),
   barStyle: "light",
-});
+};
 
 export default theme;

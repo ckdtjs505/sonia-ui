@@ -1,5 +1,5 @@
-import { useTheme } from "@shopify/restyle";
-import light, { Theme, Palette, makeColors } from "./light";
+// 플랫폼과 상관없는 디자인 값(색·간격·모서리·글자 스타일). React Native·웹 어디서나 쓴다.
+import light, { Palette, makeColors } from "./light";
 import dark from "./dark";
 import nature from "./nature";
 import ocean from "./ocean";
@@ -7,6 +7,9 @@ import sunset from "./sunset";
 import sepia from "./sepia";
 import ember from "./ember";
 import gold from "./gold";
+
+export type Theme = typeof light;
+export type { Palette };
 
 export type ThemeId = "light" | "dark" | "nature" | "ocean" | "sunset" | "sepia" | "ember" | "gold";
 
@@ -30,12 +33,14 @@ export const themeList: ThemeMeta[] = [
 export const getTheme = (themeId: ThemeId): Theme =>
   themeList.find((meta) => meta.id === themeId)!.theme;
 
-/** 지금 테마(색·간격·글자 스타일). ThemeProvider 안에서만 쓴다. */
-export const useAppTheme = () => useTheme<Theme>();
+/**
+ * 웹용 CSS 변수. `<div style={toCssVars(getTheme("dark"))}>` 처럼 감싸면
+ * 안쪽에서 `var(--primary)`, `var(--space-lg)`, `var(--radius-md)` 로 쓴다.
+ */
+export const toCssVars = (theme: Theme): Record<string, string> => ({
+  ...Object.fromEntries(Object.entries(theme.colors).map(([k, v]) => [`--${k.replace("$", "")}`, v])),
+  ...Object.fromEntries(Object.entries(theme.spacing).map(([k, v]) => [`--space-${k}`, `${v}px`])),
+  ...Object.fromEntries(Object.entries(theme.borderRadii).map(([k, v]) => [`--radius-${k}`, `${v}px`])),
+});
 
-export { ThemeProvider } from "@shopify/restyle";
 export { light, dark, nature, ocean, sunset, sepia, ember, gold, makeColors };
-export type { Theme, Palette };
-export { default as Box } from "./box";
-export { default as Text, MAX_FONT_SIZE_MULTIPLIER } from "./text";
-export { default as SafeAreaView } from "./safeAreaView";

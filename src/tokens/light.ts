@@ -1,4 +1,3 @@
-import { createTheme } from "@shopify/restyle";
 
 // ─────────────────────────────────────────────────────────────
 // 디자인 토큰
@@ -45,7 +44,7 @@ export const makeColors = (p: Palette) => ({
   $flame: p.flame,
 });
 
-const theme = createTheme({
+const theme = {
   spacing: {
     "0": 0,
     xs: 4,
@@ -91,27 +90,27 @@ const theme = createTheme({
     display: {
       color: "$foreground",
       fontSize: 34,
-      fontWeight: "900",
+      fontWeight: "900" as const,
       letterSpacing: -0.8,
     },
     // 화면 제목
     title: {
       color: "$foreground",
       fontSize: 26,
-      fontWeight: "800",
+      fontWeight: "800" as const,
       letterSpacing: -0.6,
     },
     // 시트·섹션 제목
     heading: {
       color: "$foreground",
       fontSize: 19,
-      fontWeight: "700",
+      fontWeight: "700" as const,
       letterSpacing: -0.3,
     },
     body: {
       color: "$foreground",
       fontSize: 15,
-      fontWeight: "500",
+      fontWeight: "500" as const,
     },
     caption: {
       color: "$muted",
@@ -121,30 +120,30 @@ const theme = createTheme({
     label: {
       color: "$foreground",
       fontSize: 13,
-      fontWeight: "700",
+      fontWeight: "700" as const,
     },
     // 통계 칸·배지의 숫자
     stat: {
       color: "$foreground",
       fontSize: 15,
-      fontWeight: "800",
+      fontWeight: "800" as const,
     },
     // 아주 작은 보조 글자 (요일, 워터마크 등)
     micro: {
       color: "$muted",
       fontSize: 11,
-      fontWeight: "600",
+      fontWeight: "600" as const,
     },
     // 섹션 머리말 (작은 대문자 느낌)
     overline: {
       color: "$muted",
       fontSize: 12,
-      fontWeight: "700",
+      fontWeight: "700" as const,
       letterSpacing: 0.4,
     },
   },
   barStyle: "dark",
-});
+};
 
 export type Theme = typeof theme;
 export default theme;

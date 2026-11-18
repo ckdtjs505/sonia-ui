@@ -1,8 +1,7 @@
-import { createTheme } from "@shopify/restyle";
 import light, { makeColors } from "./light";
 
 // 잉걸불 — 30일 연속 점화 보상. 숯 위에서 붉게 달아오른 불씨
-const theme = createTheme({
+const theme = {
   ...light,
   colors: makeColors({
     background: "#0F0B0A",
@@ -17,6 +16,6 @@ const theme = createTheme({
     flame: "#FF4A12",
   }),
   barStyle: "light",
-});
+};
 
 export default theme;

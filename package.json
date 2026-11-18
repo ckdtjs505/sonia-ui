@@ -2,15 +2,35 @@
   "name": "sonia-ui",
   "version": "1.0.0",
   "private": true,
-  "description": "내 앱들이 함께 쓰는 디자인 시스템: 테마 8종·간격·글자 스타일·Restyle Box/Text",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
-  "files": ["src"],
-  "scripts": { "typecheck": "tsc --noEmit" },
+  "description": "내 앱들이 함께 쓰는 디자인 시스템: tokens(웹·앱 공용 값) + native(Restyle Box/Text)",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
   "peerDependencies": {
     "@shopify/restyle": ">=2.4",
     "react": "*",
     "react-native": "*",
     "react-native-safe-area-context": "*"
+  },
+  "exports": {
+    "./tokens": "./src/tokens/index.ts",
+    "./native": "./src/native/index.ts"
+  },
+  "peerDependenciesMeta": {
+    "@shopify/restyle": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "react-native-safe-area-context": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
   }
 }

@@ -1,8 +1,7 @@
-import { createTheme } from "@shopify/restyle";
 import light, { makeColors } from "./light";
 
 // 황금 불꽃 — 100일 연속 점화 보상. 오래 지킨 불씨가 금빛으로 타오른다
-const theme = createTheme({
+const theme = {
   ...light,
   colors: makeColors({
     background: "#16110A",
@@ -17,6 +16,6 @@ const theme = createTheme({
     flame: "#FFB020",
   }),
   barStyle: "light",
-});
+};
 
 export default theme;

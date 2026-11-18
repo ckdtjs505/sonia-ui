@@ -1,4 +1,4 @@
-import { Theme } from "./light";
+import { Theme } from "../tokens";
 import { createBox } from "@shopify/restyle";
 
 const Box = createBox<Theme>();
