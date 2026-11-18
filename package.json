@@ -1,0 +1,16 @@
+{
+  "name": "fire-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "self-fire 디자인 토큰(테마 8종·간격·글자 스타일)과 Restyle Box/Text",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": ["src"],
+  "scripts": { "typecheck": "tsc --noEmit" },
+  "peerDependencies": {
+    "@shopify/restyle": ">=2.4",
+    "react": "*",
+    "react-native": "*",
+    "react-native-safe-area-context": "*"
+  }
+}
