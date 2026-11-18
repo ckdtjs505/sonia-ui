@@ -45,6 +45,8 @@ typography:
   micro:
     fontSize: "11px"
     fontWeight: 600
+  code:
+    fontFamily: "ui-monospace, SF Mono, Menlo, Consolas, monospace"
 rounded:
   xs: "6px"
   sm: "10px"
