@@ -290,7 +290,8 @@
     width: 100%;
     box-sizing: border-box;
     padding: var(--spacing-s) var(--spacing-md);
-    border: 1px solid var(--color-border);
+    /* 입력 칸 경계는 장식 테두리보다 진하게: muted 80%면 모든 테마에서 3:1 이상 (WCAG 1.4.11) */
+    border: 1px solid color-mix(in srgb, var(--color-muted) 80%, transparent);
     border-radius: var(--radius-sm);
     background: var(--color-surface-muted);
     color: var(--color-foreground);
@@ -299,6 +300,11 @@
   }
   .sn-input::placeholder { color: var(--color-muted); }
   .sn-input:focus { outline: 2px solid var(--color-primary); outline-offset: -1px; }
+  .sn-input:disabled,
+  .sn-input[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
   .sn-text-hero {
     font-size: var(--text-hero);

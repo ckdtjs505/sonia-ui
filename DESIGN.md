@@ -245,7 +245,8 @@ components:
 - **Internal Padding:** lg(16px).
 
 ### Inputs / Fields (`sn-input`)
-- **Style:** 움푹한 면 바탕, 1px border, 10px 모서리, 15px 본문 글자, 여백 8·12. placeholder는 muted.
+- **Style:** 움푹한 면 바탕, 1px 진한 테두리(muted 80%: 장식용 border보다 진해 모든 테마에서 3:1 이상), 10px 모서리, 15px 본문 글자, 여백 8·12. placeholder는 muted.
+- **Disabled:** 투명도 0.5, `not-allowed` 커서.
 - **Focus:** 2px primary 외곽선(offset -1px).
 
 ## Do's and Don'ts
