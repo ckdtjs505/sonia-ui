@@ -2,11 +2,26 @@
 
 창선의 모든 앱·웹이 함께 쓰는 디자인 시스템. **모든 디자인은 여기서 만들고, 각 프로젝트는 가져다 쓴다.**
 
+![sonia-ui 랜딩 — 블로그 테마](docs/readme/hero-sonia.jpg)
+
+<table>
+  <tr>
+    <td><img src="docs/readme/hero-light.jpg" alt="라이트 테마"></td>
+    <td><img src="docs/readme/blog-nature.jpg" alt="블로그에 숲 테마를 적용한 모습"></td>
+  </tr>
+  <tr>
+    <td align="center">같은 화면, 라이트 테마</td>
+    <td align="center">블로그(Sonia.dev)도 같은 테마로 — 숲</td>
+  </tr>
+</table>
+
 - 문서: https://ckdtjs505.github.io/sonia-ui/
 - AI용 전체 레퍼런스: https://ckdtjs505.github.io/sonia-ui/llms-full.txt
 - 저장소를 고치는 AI: [AGENTS.md](AGENTS.md)
 
 ## AI에게 맡기기
+
+![AI와 쓰기 문서](docs/readme/ai.jpg)
 
 ```
 sonia-ui로 만들어줘. 규칙과 사용법: https://ckdtjs505.github.io/sonia-ui/llms-full.txt
@@ -78,6 +93,18 @@ import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
   </Box>
 </ThemeProvider>
 ```
+
+## 테마 9종
+
+`<html data-theme="…">` 하나로 화면 전체가 바뀐다. 모든 테마가 같은 색 이름을 갖고 값만 다르다.
+
+![테마 9종 미리보기](docs/readme/themes.jpg)
+
+![테마별 팔레트](docs/readme/palette.jpg)
+
+## 컴포넌트
+
+![sn-btn 버튼과 크기](docs/readme/components.jpg)
 
 ## 이름
 
