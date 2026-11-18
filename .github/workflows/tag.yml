@@ -1,0 +1,48 @@
+# main에 src/가 바뀐 커밋이 들어오면 버전 태그를 자동으로 올리고 CDN(@1) 캐시를 비운다.
+#   - 보통: 마지막 v태그의 패치 +1  (v1.1.0 → v1.1.1)
+#   - package.json "version"의 메이저·마이너가 더 크면 그 버전.0  (1.2.x로 바꾸면 → v1.2.0)
+# 손으로 태그를 올릴 일은 없다. 문서·README만 바뀐 커밋은 태그를 올리지 않는다.
+name: tag
+on:
+  push:
+    branches: [main]
+    paths: ["src/**", "package.json"]
+  workflow_dispatch:
+concurrency: tag
+permissions:
+  contents: write
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 다음 버전 태그 만들기
+        id: next
+        run: |
+          if git tag --points-at HEAD | grep -q '^v'; then
+            echo "이 커밋엔 이미 태그가 있어요: $(git tag --points-at HEAD)"; exit 0
+          fi
+          last=$(git tag -l 'v*' --sort=-v:refname | head -1)
+          last=${last:-v0.0.0}
+          IFS=. read -r tmaj tmin tpat <<< "${last#v}"
+          IFS=. read -r pmaj pmin _ <<< "$(node -p 'require("./package.json").version')"
+          if [ "$pmaj" -gt "$tmaj" ] || { [ "$pmaj" -eq "$tmaj" ] && [ "$pmin" -gt "$tmin" ]; }; then
+            next="v$pmaj.$pmin.0"
+          else
+            next="v$tmaj.$tmin.$((tpat + 1))"
+          fi
+          git tag "$next"
+          git push origin "$next"
+          echo "tag=$next" >> "$GITHUB_OUTPUT"
+          echo "$last → $next"
+
+      - name: CDN 캐시 비우기
+        if: steps.next.outputs.tag != ''
+        run: |
+          major=$(echo "${{ steps.next.outputs.tag }}" | sed -E 's/^v([0-9]+).*/\1/')
+          for f in src/css/base.css src/css/themes.css src/browser/theme.js src/tailwind/theme.css src/themes.json; do
+            curl -fsS "https://purge.jsdelivr.net/gh/ckdtjs505/sonia-ui@$major/$f" > /dev/null && echo "비움: @$major/$f" || echo "실패(무시): $f"
+          done

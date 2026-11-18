@@ -134,7 +134,7 @@ import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
 npm run build   # CSS · theme.js · themes.json · 문서 · llms-full.txt를 다시 만든다
 ```
 
-main에 푸시하면 문서 사이트가 갱신된다. CDN `@1`까지 바로 반영하려면 태그도 올린다(`git tag v1.x.y && git push --tags`).
+main에 푸시하면 끝. 문서 사이트가 갱신되고, `src/`가 바뀌었으면 버전 태그(`v1.1.0` → `v1.1.1`)와 CDN `@1`도 자동으로 따라온다. 큰 변경이면 `package.json`의 `version`만 `1.2.0`으로 바꿔서 푸시.
 
 ## 쓰는 곳
 
