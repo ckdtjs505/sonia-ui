@@ -18,23 +18,23 @@
       <a href="#" class="flex items-center gap-s text-heading">
         <span class="inline-block size-6 rounded-sm bg-primary"></span>sonia-ui
       </a>
-      <div class="ml-auto hidden gap-lg text-label text-muted md:flex">
-        <a href="docs/installation.html" class="hover:text-foreground">문서</a>
-        <a href="docs/ai.html" class="hover:text-foreground">AI</a>
-        <a href="#colors" class="hover:text-foreground">색</a>
-        <a href="#spacing" class="hover:text-foreground">간격</a>
-        <a href="#type" class="hover:text-foreground">글자</a>
-        <a href="#native" class="hover:text-foreground">앱</a>
+      <div class="ml-auto flex items-center gap-md text-label text-muted md:gap-lg">
+        <a href="docs/installation.html" class="py-md hover:text-foreground md:py-0">문서</a>
+        <a href="docs/ai.html" class="py-md hover:text-foreground md:py-0">AI</a>
+        <a href="#colors" class="hidden hover:text-foreground md:inline">색</a>
+        <a href="#spacing" class="hidden hover:text-foreground md:inline">간격</a>
+        <a href="#type" class="hidden hover:text-foreground md:inline">글자</a>
+        <a href="#native" class="hidden hover:text-foreground md:inline">앱</a>
       </div>
-      <a href="https://github.com/ckdtjs505/sonia-ui" class="sn-btn sn-btn-outline sn-btn-sm sn-btn-pill ml-auto md:ml-0">GitHub</a>
-      <select data-theme-select aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"></select>
+      <a href="https://github.com/ckdtjs505/sonia-ui" class="sn-btn sn-btn-outline sn-btn-sm sn-btn-pill hidden sm:inline-flex">GitHub</a>
+      <select data-theme-select aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-md text-label text-foreground md:py-xs md:text-micro"></select>
     </nav>
   </header>
 
   <!-- 히어로 -->
   <section class="relative overflow-hidden border-b border-border">
     <div class="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(var(--color-border)_1px,transparent_1px),linear-gradient(90deg,var(--color-border)_1px,transparent_1px)] [background-size:var(--spacing-xxl)_var(--spacing-xxl)]"></div>
-    <div class="relative mx-auto grid max-w-6xl gap-xxl px-lg py-hg md:grid-cols-2">
+    <div class="relative mx-auto grid max-w-6xl gap-xxl px-lg py-xxl md:grid-cols-2 md:py-hg">
       <div>
         <h1 class="text-hero leading-tight">내 모든 앱을<br />같은 결로.</h1>
         <p class="mt-lg text-body text-muted">색·간격·글자 크기를 한 곳에서 정하고, 웹은 Tailwind 클래스로, 앱은 Box·Text로 똑같이 쓴다. 테마는 <code class="text-foreground">data-theme</code> 하나로 바뀐다.</p>
@@ -70,7 +70,7 @@
     </div>
   </section>
 
-  <main class="mx-auto max-w-6xl space-y-hg px-lg py-hg">
+  <main class="mx-auto max-w-6xl space-y-xxl px-lg py-xxl md:space-y-hg md:py-hg">
 
     <!-- 시작: 프로젝트 종류별 세 갈래 -->
     <section id="start" class="scroll-mt-24">
@@ -82,8 +82,8 @@
           <p class="text-caption text-muted">Claude Code 등에 붙여 넣으면 규칙 파일 하나를 읽고 hex·px 없이 만든다.</p>
           <pre id="start-ai" class="overflow-x-auto whitespace-pre-wrap break-all rounded-md border border-border bg-surface p-lg text-caption leading-relaxed text-foreground">sonia-ui로 만들어줘. 규칙과 사용법: https://ckdtjs505.github.io/sonia-ui/llms-full.txt</pre>
           <div class="flex flex-wrap gap-s">
-            <button type="button" data-copy-from="#start-ai" class="sn-btn sn-btn-soft sn-btn-sm"><span class="copy-label">복사</span></button>
-            <a href="llms-full.txt" class="sn-btn sn-btn-ghost sn-btn-sm">llms-full.txt 열기</a>
+            <button type="button" data-copy-from="#start-ai" class="sn-btn sn-btn-soft"><span class="copy-label">복사</span></button>
+            <a href="llms-full.txt" class="sn-btn sn-btn-ghost">llms-full.txt 열기</a>
           </div>
         </div>
         <div class="flex min-w-0 flex-col gap-md">
@@ -92,7 +92,7 @@
           <pre id="start-cdn" class="overflow-x-auto rounded-md border border-border bg-surface p-lg text-caption leading-relaxed text-foreground">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/css/base.css"&gt;
 &lt;script src="https://cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/browser/theme.js"&gt;&lt;/script&gt;</pre>
           <div class="flex flex-wrap gap-s">
-            <button type="button" data-copy-from="#start-cdn" class="sn-btn sn-btn-soft sn-btn-sm"><span class="copy-label">복사</span></button>
+            <button type="button" data-copy-from="#start-cdn" class="sn-btn sn-btn-soft"><span class="copy-label">복사</span></button>
           </div>
         </div>
         <div class="flex min-w-0 flex-col gap-md">
@@ -104,8 +104,8 @@
 @import "tailwindcss";
 @import "sonia-ui/tailwind.css";</pre>
           <div class="flex flex-wrap gap-s">
-            <button type="button" data-copy-from="#start-npm" class="sn-btn sn-btn-soft sn-btn-sm"><span class="copy-label">복사</span></button>
-            <a href="docs/installation.html" class="sn-btn sn-btn-ghost sn-btn-sm">Tailwind 없이 · Next.js</a>
+            <button type="button" data-copy-from="#start-npm" class="sn-btn sn-btn-soft"><span class="copy-label">복사</span></button>
+            <a href="docs/installation.html" class="sn-btn sn-btn-ghost">Tailwind 없이 · Next.js</a>
           </div>
         </div>
       </div>
