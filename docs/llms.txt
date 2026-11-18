@@ -1,0 +1,19 @@
+# sonia-ui
+
+> 창선(ckdtjs505)의 모든 앱·웹이 함께 쓰는 디자인 시스템. 색은 역할 이름(primary, surface…)으로, 간격·모서리·글자는 이름 단계(lg, md, title…)로 쓴다. 테마 9종은 `<html data-theme>` 하나로 바뀐다.
+
+UI를 만들거나 고칠 때는 hex 색·px 간격을 직접 쓰지 말고 아래 이름만 쓴다. 전체 규칙과 값은 llms-full.txt에 있다.
+
+## 문서
+- [전체 레퍼런스 (AI용, 이것 하나면 됨)](https://ckdtjs505.github.io/sonia-ui/llms-full.txt)
+- [설치](https://ckdtjs505.github.io/sonia-ui/docs/installation.html)
+- [버튼 · 카드 · 태그](https://ckdtjs505.github.io/sonia-ui/docs/components.html)
+- [색](https://ckdtjs505.github.io/sonia-ui/docs/colors.html)
+- [테마](https://ckdtjs505.github.io/sonia-ui/docs/themes.html)
+- [GitHub](https://github.com/ckdtjs505/sonia-ui)
+
+## 가장 빠른 시작 (설치 없이, 아무 HTML)
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/css/base.css">
+<script src="https://cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/browser/theme.js"></script>
+```

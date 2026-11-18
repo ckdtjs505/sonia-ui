@@ -3,6 +3,15 @@
 내 모든 앱이 함께 쓰는 디자인 시스템. **Tailwind 클래스로 쓴다.**
 문서: https://ckdtjs505.github.io/sonia-ui/docs/installation.html
 
+**AI에게:** `sonia-ui로 만들어줘. 규칙과 사용법: https://ckdtjs505.github.io/sonia-ui/llms-full.txt` (저장소를 고치는 AI는 [AGENTS.md](AGENTS.md))
+
+**설치 없이 두 줄:**
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/css/base.css">
+<script src="https://cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/browser/theme.js"></script>
+```
+
 ## 웹 (Tailwind v4)
 
 ```sh

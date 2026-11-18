@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI와 쓰기 - 시작하기 - sonia-ui</title>
+  <meta name="description" content="sonia-ui는 AI가 읽고 바로 쓰도록 만들었다. 링크 하나를 주면 규칙·설치법·모든 값을 안다." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script>try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch{}</script>
+</head>
+<body>
+  <header class="sticky top-0 z-30 border-b border-border bg-background/90 backdrop-blur">
+    <div class="flex h-14 items-center gap-md px-lg">
+      <a href="../index.html" class="flex items-center gap-s text-heading text-foreground"><span class="inline-block size-5 rounded-xs bg-flame"></span>sonia-ui</a>
+      <span class="rounded-pill bg-surface-muted px-s py-[2px] text-micro">v1.0</span>
+      <div class="ml-auto flex items-center gap-lg text-label">
+        <a href="installation.html" class="text-foreground">Docs</a>
+        <a href="https://github.com/ckdtjs505/sonia-ui" class="text-muted hover:text-foreground">GitHub</a>
+        <select data-theme-select aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"></select>
+      </div>
+    </div>
+    <div class="flex items-center gap-s border-t border-border px-lg py-s text-caption lg:hidden">
+      <button id="menu" aria-label="메뉴" class="text-foreground">☰</button><span>시작하기</span><span>›</span><span class="text-foreground">AI와 쓰기</span>
+    </div>
+  </header>
+
+  <div class="mx-auto flex max-w-[1440px]">
+    <nav id="sidebar" class="fixed inset-y-0 left-0 top-14 z-20 hidden w-72 overflow-y-auto border-r border-border bg-background px-xl py-xl lg:sticky lg:block lg:h-[calc(100vh-3.5rem)]">
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">시작하기</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="ai.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-primary font-semibold text-primary">AI와 쓰기</a></li>
+    <li><a href="installation.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">설치</a></li>
+    <li><a href="expo.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">앱 (Expo)</a></li>
+    <li><a href="themes.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">테마</a></li>
+    <li><a href="customizing.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">값 고치기</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">컴포넌트</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="components.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">버튼 · 카드 · 태그</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">색</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="colors.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">색</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">간격</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="padding.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">padding</a></li>
+    <li><a href="margin.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">margin</a></li>
+    <li><a href="gap.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">gap</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">모서리</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="border-radius.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">border-radius</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">글자</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="font-size.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">font-size</a></li>
+  </ul></nav>
+
+    <main class="min-w-0 flex-1 px-lg py-xxl sm:px-xxl">
+      <div class="mx-auto max-w-3xl">
+        <p class="text-overline uppercase text-primary">시작하기</p>
+        <h1 class="mt-s text-3xl font-extrabold tracking-tight text-foreground">AI와 쓰기</h1>
+        <p class="mt-md text-lg text-muted">sonia-ui는 AI가 읽고 바로 쓰도록 만들었다. 링크 하나를 주면 규칙·설치법·모든 값을 안다.</p>
+        
+        
+        <section id="prompt" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#prompt">AI에게 이렇게 말하기</a></h2><p class="mt-md text-body leading-7 text-muted">아무 AI 코딩 도구에 붙여 넣는다.</p>
+<div class="overflow-hidden rounded-lg border border-border bg-surface">
+  <div class="border-b border-border px-lg py-s text-micro">프롬프트</div>
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>sonia-ui로 만들어줘.
+규칙과 사용법: https:<span class="text-muted">//ckdtjs505.github.io/sonia-ui/llms-full.txt</span></code></pre>
+</div></section><section id="files" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#files">AI용 파일</a></h2>
+<div class="table-wrap relative mt-xl ">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-caption">
+      <thead><tr class="border-b border-border"><th class="py-s pr-lg text-label">Class</th><th class="py-s text-label">Styles</th></tr></thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">llms.txt</td><td class="py-s font-mono whitespace-pre text-muted">짧은 안내와 링크 (사이트 루트)</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">llms-full.txt</td><td class="py-s font-mono whitespace-pre text-muted">규칙 · 입구 고르기 · 설치 레시피 · 테마별 색 값 · 클래스 전부, 한 파일</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">AGENTS.md</td><td class="py-s font-mono whitespace-pre text-muted">sonia-ui 저장소를 고치는 AI용 안내 (CLAUDE.md도 같은 파일)</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">node_modules/sonia-ui/llms-full.txt</td><td class="py-s font-mono whitespace-pre text-muted">설치한 프로젝트에서는 로컬 파일로도 읽힌다</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div></section><section id="cdn" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#cdn">설치 없이 두 줄</a></h2><p class="mt-md text-body leading-7 text-muted">데모·정적 페이지는 이 두 줄이면 색·컴포넌트·테마 선택까지 된다.</p>
+<div class="overflow-hidden rounded-lg border border-border bg-surface">
+  <div class="border-b border-border px-lg py-s text-micro">index.html</div>
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">link</span> rel="stylesheet" href="https:<span class="text-muted">//cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/css/base.css"&gt;</span>
+&lt;<span class="text-primary">script</span> src="https:<span class="text-muted">//cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/browser/theme.js"&gt;&lt;/script&gt;</span>
+
+&lt;<span class="text-primary">select</span> data-theme-select&gt;&lt;/<span class="text-primary">select</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-primary"</span>&gt;저장&lt;/<span class="text-primary">button</span>&gt;</code></pre>
+</div></section><section id="rules" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#rules">AI가 지키는 규칙</a></h2>
+<div class="table-wrap relative mt-xl ">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-caption">
+      <thead><tr class="border-b border-border"><th class="py-s pr-lg text-label">Class</th><th class="py-s text-label">Styles</th></tr></thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">색</td><td class="py-s font-mono whitespace-pre text-muted">역할 이름만 (bg-primary, var(--color-surface)). hex 금지</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">간격·모서리·글자</td><td class="py-s font-mono whitespace-pre text-muted">이름 단계만 (p-lg, rounded-md, text-title)</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">컴포넌트</td><td class="py-s font-mono whitespace-pre text-muted">sn-btn · sn-card · sn-tag · sn-input 조합</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">다크 모드</td><td class="py-s font-mono whitespace-pre text-muted">따로 만들지 않음. data-theme가 해결</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">값 바꾸기</td><td class="py-s font-mono whitespace-pre text-muted">프로젝트에서 덮지 말고 sonia-ui를 고침</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div></section><section id="claude-code" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#claude-code">Claude Code 스킬</a></h2><p class="mt-md text-body leading-7 text-muted"><code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">skill/SKILL.md</code>를 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">~/.claude/skills/sonia-ui</code>로 연결해 두면, 어느 프로젝트에서든 "sonia-ui로 만들어줘", "테마 붙여줘"에 이 규칙대로 움직인다.</p>
+<div class="overflow-hidden rounded-lg border border-border bg-surface">
+  <div class="border-b border-border px-lg py-s text-micro">Terminal</div>
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>ln -s ~/Desktop/web/sonia-ui/skill ~/.claude/skills/sonia-ui</code></pre>
+</div></section>
+        
+        <div class="mt-hg flex justify-between border-t border-border pt-xl text-label">
+          <span></span>
+          <a href="installation.html" class="text-muted hover:text-foreground">설치 →</a>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto py-xxl pr-xl xl:block">
+      <p class="text-label text-foreground">이 페이지</p>
+      <ul class="mt-md space-y-s text-caption"><li><a href="#prompt" class="text-muted hover:text-foreground">AI에게 이렇게 말하기</a></li><li><a href="#files" class="text-muted hover:text-foreground">AI용 파일</a></li><li><a href="#cdn" class="text-muted hover:text-foreground">설치 없이 두 줄</a></li><li><a href="#rules" class="text-muted hover:text-foreground">AI가 지키는 규칙</a></li><li><a href="#claude-code" class="text-muted hover:text-foreground">Claude Code 스킬</a></li></ul>
+    </aside>
+  </div>
+
+  <script>
+    document.getElementById("menu").onclick = () => document.getElementById("sidebar").classList.toggle("hidden");
+    for (const w of document.querySelectorAll(".table-wrap.collapsed")) {
+      w.querySelector(".more button").onclick = () => { w.classList.remove("collapsed"); w.querySelector(".more").remove(); };
+    }
+  </script>
+  <script src="../theme.js"></script>
+</body>
+</html>

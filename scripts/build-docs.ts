@@ -62,6 +62,28 @@ const box = (cls: string, label = cls) =>
 
 const pages: Page[] = [
   {
+    slug: "ai", group: "시작하기", title: "AI와 쓰기",
+    lead: "sonia-ui는 AI가 읽고 바로 쓰도록 만들었다. 링크 하나를 주면 규칙·설치법·모든 값을 안다.",
+    sections: [
+      { id: "prompt", title: "AI에게 이렇게 말하기", body: p("아무 AI 코딩 도구에 붙여 넣는다.") + code(`sonia-ui로 만들어줘.\n규칙과 사용법: https://ckdtjs505.github.io/sonia-ui/llms-full.txt`, "프롬프트") },
+      { id: "files", title: "AI용 파일", body: table([
+        ["llms.txt", "짧은 안내와 링크 (사이트 루트)"],
+        ["llms-full.txt", "규칙 · 입구 고르기 · 설치 레시피 · 테마별 색 값 · 클래스 전부, 한 파일"],
+        ["AGENTS.md", "sonia-ui 저장소를 고치는 AI용 안내 (CLAUDE.md도 같은 파일)"],
+        ["node_modules/sonia-ui/llms-full.txt", "설치한 프로젝트에서는 로컬 파일로도 읽힌다"],
+      ]) },
+      { id: "cdn", title: "설치 없이 두 줄", body: p("데모·정적 페이지는 이 두 줄이면 색·컴포넌트·테마 선택까지 된다.") + code(`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/css/base.css">\n<script src="https://cdn.jsdelivr.net/gh/ckdtjs505/sonia-ui@1/src/browser/theme.js"></script>\n\n<select data-theme-select></select>\n<button class="sn-btn sn-btn-primary">저장</button>`, "index.html") },
+      { id: "rules", title: "AI가 지키는 규칙", body: table([
+        ["색", "역할 이름만 (bg-primary, var(--color-surface)). hex 금지"],
+        ["간격·모서리·글자", "이름 단계만 (p-lg, rounded-md, text-title)"],
+        ["컴포넌트", "sn-btn · sn-card · sn-tag · sn-input 조합"],
+        ["다크 모드", "따로 만들지 않음. data-theme가 해결"],
+        ["값 바꾸기", "프로젝트에서 덮지 말고 sonia-ui를 고침"],
+      ]) },
+      { id: "claude-code", title: "Claude Code 스킬", body: p(`${c("skill/SKILL.md")}를 ${c("~/.claude/skills/sonia-ui")}로 연결해 두면, 어느 프로젝트에서든 \"sonia-ui로 만들어줘\", \"테마 붙여줘\"에 이 규칙대로 움직인다.`) + code(`ln -s ~/Desktop/web/sonia-ui/skill ~/.claude/skills/sonia-ui`, "Terminal") },
+    ],
+  },
+  {
     slug: "installation", group: "시작하기", title: "설치",
     lead: "Tailwind CSS v4 프로젝트에 sonia-ui 테마를 붙인다. CSS 두 줄이면 끝.",
     sections: [
@@ -301,39 +323,65 @@ mkdirSync(out, { recursive: true });
 for (const pg of pages) writeFileSync(new URL(`${pg.slug}.html`, out), render(pg));
 console.log(`docs: ${pages.length} pages`);
 
-// 랜딩·문서가 함께 쓰는 테마 선택 스크립트. 목록은 sonia-ui themeList에서 온다.
-// <select data-theme-select> 와 <div data-theme-buttons> 를 채우고, 고른 테마를 localStorage에 기억한다.
+// 어디서나 넣기만 하면 되는 테마 스크립트 (sonia-ui/theme.js). 랜딩·문서도 이걸 쓴다.
+// <head>에 두면 그리기 전에 저장된 테마를 적용하고, 문서가 준비되면 [data-theme-select] · [data-theme-buttons]를 채운다.
 const themeScript = `// 자동 생성 파일 — scripts/build-docs.ts. 직접 고치지 말 것.
+// sonia-ui 테마 선택. <head>에 넣기만 하면 된다.
+//   <select data-theme-select></select>      테마 고르는 상자 (자동으로 채움)
+//   <div data-theme-buttons></div>           테마 버튼들 (자동으로 채움)
+//   window.sonia.setTheme("ocean")           코드로 바꾸기
+//   addEventListener("sonia:themechange", e => e.detail.id)   바뀔 때 알림
+// 고른 값은 localStorage "theme"에 남는다. 없으면 <html data-theme> 값, 그것도 없으면 기기 설정(light/dark).
 (() => {
-  const themes = ${JSON.stringify(themeList.map((t) => [t.id, t.name]))};
+  const themes = ${JSON.stringify(themeList.map((t) => ({ id: t.id, name: t.name, scheme: (t.theme as { barStyle: string }).barStyle === "light" ? "dark" : "light" })))};
   const root = document.documentElement;
-  const on = "rounded-pill bg-primary px-md py-xs text-label text-on-primary";
-  const off = "rounded-pill border border-border px-md py-xs text-label text-muted hover:text-foreground";
+  const find = (id) => themes.find((t) => t.id === id);
+  const system = () => (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch {}
 
-  const set = (id) => {
-    root.dataset.theme = id;
-    try { localStorage.setItem("theme", id); } catch {}
-    sync();
+  const apply = (id) => {
+    const t = find(id) || find(system());
+    root.dataset.theme = t.id;
+    root.dataset.scheme = t.scheme;
+    return t;
   };
+  apply(saved || root.dataset.theme);
 
+  const btnOn = "sn-btn sn-btn-primary sn-btn-sm sn-btn-pill";
+  const btnOff = "sn-btn sn-btn-outline sn-btn-sm sn-btn-pill";
   const sync = () => {
     for (const sel of document.querySelectorAll("[data-theme-select]")) sel.value = root.dataset.theme;
     for (const b of document.querySelectorAll("[data-theme-buttons] button")) {
-      const active = b.value === root.dataset.theme;
-      b.className = active ? on : off;
-      b.setAttribute("aria-pressed", String(active));
+      const on = b.value === root.dataset.theme;
+      b.className = on ? btnOn : btnOff;
+      b.setAttribute("aria-pressed", String(on));
     }
   };
 
-  for (const sel of document.querySelectorAll("[data-theme-select]")) {
-    sel.innerHTML = themes.map(([id, name]) => \`<option value="\${id}">\${name}</option>\`).join("");
-    sel.onchange = () => set(sel.value);
-  }
-  for (const box of document.querySelectorAll("[data-theme-buttons]")) {
-    box.innerHTML = themes.map(([id, name]) => \`<button type="button" value="\${id}">\${name}</button>\`).join("");
-    box.onclick = (e) => { const b = e.target.closest("button"); if (b) set(b.value); };
-  }
-  sync();
+  const setTheme = (id) => {
+    const t = apply(id);
+    try { localStorage.setItem("theme", t.id); } catch {}
+    sync();
+    dispatchEvent(new CustomEvent("sonia:themechange", { detail: t }));
+  };
+
+  const wire = () => {
+    for (const sel of document.querySelectorAll("[data-theme-select]")) {
+      if (!sel.options.length) sel.innerHTML = themes.map((t) => \`<option value="\${t.id}">\${t.name}</option>\`).join("");
+      sel.addEventListener("change", () => setTheme(sel.value));
+    }
+    for (const box of document.querySelectorAll("[data-theme-buttons]")) {
+      box.innerHTML = themes.map((t) => \`<button type="button" value="\${t.id}">\${t.name}</button>\`).join("");
+      box.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) setTheme(b.value); });
+    }
+    sync();
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", wire); else wire();
+
+  window.sonia = { themes, setTheme, getTheme: () => root.dataset.theme };
 })();
 `;
 writeFileSync(new URL("../docs/theme.js", import.meta.url), themeScript);
+mkdirSync(new URL("../src/browser/", import.meta.url), { recursive: true });
+writeFileSync(new URL("../src/browser/theme.js", import.meta.url), themeScript);
