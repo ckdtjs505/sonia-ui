@@ -1,18 +1,18 @@
-# fire-theme
+# sonia-ui
 
-self-fire 앱의 테마(8종 색·간격·글자 스타일)와 Restyle `Box`/`Text`/`SafeAreaView`.
+내 모든 앱이 함께 쓰는 테마(8종 색·간격·글자 스타일)와 Restyle `Box`/`Text`/`SafeAreaView`.
 Expo/React Native 전용. TS 소스를 그대로 배포하므로 Metro가 빌드한다.
 
 ## 설치
 
 ```sh
-npm i github:ckdtjs505/fire-theme @shopify/restyle react-native-safe-area-context
+npm i github:ckdtjs505/sonia-ui @shopify/restyle react-native-safe-area-context
 ```
 
 ## 사용
 
 ```tsx
-import { ThemeProvider, getTheme, Box, Text, useAppTheme } from "fire-theme";
+import { ThemeProvider, getTheme, Box, Text, useAppTheme } from "sonia-ui";
 
 export default function App() {
   return (
@@ -33,5 +33,5 @@ export default function App() {
 ## 업데이트 받기
 
 ```sh
-npm i github:ckdtjs505/fire-theme   # 최신 main
+npm i github:ckdtjs505/sonia-ui   # 최신 main
 ```
