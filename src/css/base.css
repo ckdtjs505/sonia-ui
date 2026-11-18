@@ -26,6 +26,9 @@
   --radius-lg: 24px;
   --radius-xl: 32px;
   --radius-pill: 999px;
+  --text-hero-lg: 64px;
+  --text-hero-lg--font-weight: 900;
+  --text-hero-lg--letter-spacing: -2px;
   --text-hero: 48px;
   --text-hero--font-weight: 900;
   --text-hero--letter-spacing: -1.4px;
@@ -306,6 +309,11 @@
     cursor: not-allowed;
   }
 
+  .sn-text-hero-lg {
+    font-size: var(--text-hero-lg);
+    font-weight: var(--text-hero-lg--font-weight);
+    letter-spacing: var(--text-hero-lg--letter-spacing);
+  }
   .sn-text-hero {
     font-size: var(--text-hero);
     font-weight: var(--text-hero--font-weight);

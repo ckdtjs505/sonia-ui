@@ -13,6 +13,10 @@ colors:
   on-primary: "#FFFFFF"
   flame: "#F0521F"
 typography:
+  hero-lg:
+    fontSize: "64px"
+    fontWeight: 900
+    letterSpacing: "-2px"
   hero:
     fontFamily: "Pretendard Variable, Pretendard, -apple-system, system-ui, Apple SD Gothic Neo, Noto Sans KR, sans-serif"
     fontSize: "48px"
@@ -188,6 +192,7 @@ components:
 
 ### Hierarchy
 - **Hero** (900, 48px, 자간 -1.4px): 랜딩·첫 화면의 큰 제목. 화면당 하나.
+- **Hero-lg** (900, 64px, 자간 -2px): hero의 넓은 화면판. `md:` 이상에서만 hero 대신 쓴다.
 - **Display** (900, 34px, 자간 -0.8px): 큰 숫자 하나. 모닥불 일수처럼 화면의 주인공이 되는 값.
 - **Title** (800, 26px, 자간 -0.6px): 화면 제목.
 - **Heading** (700, 19px, 자간 -0.3px): 시트·섹션 제목.
