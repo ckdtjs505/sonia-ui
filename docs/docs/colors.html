@@ -17,7 +17,7 @@
       <div class="ml-auto flex items-center gap-lg text-label">
         <a href="installation.html" class="text-foreground">Docs</a>
         <a href="https://github.com/ckdtjs505/sonia-ui" class="text-muted hover:text-foreground">GitHub</a>
-        <select id="theme" aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"><option value="light">라이트</option><option value="dark">다크</option><option value="nature">숲</option><option value="ocean">바다</option><option value="sunset">노을</option><option value="sepia">세피아</option><option value="ember">잉걸불</option><option value="gold">황금 불꽃</option></select>
+        <select data-theme-select aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"></select>
       </div>
     </div>
     <div class="flex items-center gap-s border-t border-border px-lg py-s text-caption lg:hidden">
@@ -140,13 +140,11 @@
   </div>
 
   <script>
-    const sel = document.getElementById("theme");
-    sel.value = document.documentElement.dataset.theme;
-    sel.onchange = () => { document.documentElement.dataset.theme = sel.value; try { localStorage.setItem("theme", sel.value); } catch {} };
     document.getElementById("menu").onclick = () => document.getElementById("sidebar").classList.toggle("hidden");
     for (const w of document.querySelectorAll(".table-wrap.collapsed")) {
       w.querySelector(".more button").onclick = () => { w.classList.remove("collapsed"); w.querySelector(".more").remove(); };
     }
   </script>
+  <script src="../theme.js"></script>
 </body>
 </html>

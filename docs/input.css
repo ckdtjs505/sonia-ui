@@ -2,6 +2,7 @@
 @import "../src/tailwind/theme.css";
 @source "./index.html";
 @source "./docs";
+@source "./theme.js";
 
 @layer base {
   html { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; }

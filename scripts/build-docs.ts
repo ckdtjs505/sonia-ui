@@ -201,7 +201,7 @@ const sidebar = (active: string) => groups.map((g) => `
     <li><a href="${pg.slug}.html" class="-ml-px block border-l py-[3px] pl-md text-caption ${pg.slug === active ? "border-primary font-semibold text-primary" : "border-transparent text-muted hover:border-muted hover:text-foreground"}">${pg.title}</a></li>`).join("")}
   </ul>`).join("");
 
-const themeSelect = `<select id="theme" aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground">${themeList.map((t) => `<option value="${t.id}">${t.name}</option>`).join("")}</select>`;
+const themeSelect = `<select data-theme-select aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"></select>`;
 
 const render = (pg: Page) => {
   const toc: Section[] = [...(pg.table ? [{ id: "reference", title: "빠른 참조", body: "" }] : []), ...pg.sections];
@@ -258,14 +258,12 @@ const render = (pg: Page) => {
   </div>
 
   <script>
-    const sel = document.getElementById("theme");
-    sel.value = document.documentElement.dataset.theme;
-    sel.onchange = () => { document.documentElement.dataset.theme = sel.value; try { localStorage.setItem("theme", sel.value); } catch {} };
     document.getElementById("menu").onclick = () => document.getElementById("sidebar").classList.toggle("hidden");
     for (const w of document.querySelectorAll(".table-wrap.collapsed")) {
       w.querySelector(".more button").onclick = () => { w.classList.remove("collapsed"); w.querySelector(".more").remove(); };
     }
   </script>
+  <script src="../theme.js"></script>
 </body>
 </html>
 `;
@@ -275,3 +273,40 @@ const out = new URL("../docs/docs/", import.meta.url);
 mkdirSync(out, { recursive: true });
 for (const pg of pages) writeFileSync(new URL(`${pg.slug}.html`, out), render(pg));
 console.log(`docs: ${pages.length} pages`);
+
+// 랜딩·문서가 함께 쓰는 테마 선택 스크립트. 목록은 sonia-ui themeList에서 온다.
+// <select data-theme-select> 와 <div data-theme-buttons> 를 채우고, 고른 테마를 localStorage에 기억한다.
+const themeScript = `// 자동 생성 파일 — scripts/build-docs.ts. 직접 고치지 말 것.
+(() => {
+  const themes = ${JSON.stringify(themeList.map((t) => [t.id, t.name]))};
+  const root = document.documentElement;
+  const on = "rounded-pill bg-primary px-md py-xs text-label text-on-primary";
+  const off = "rounded-pill border border-border px-md py-xs text-label text-muted hover:text-foreground";
+
+  const set = (id) => {
+    root.dataset.theme = id;
+    try { localStorage.setItem("theme", id); } catch {}
+    sync();
+  };
+
+  const sync = () => {
+    for (const sel of document.querySelectorAll("[data-theme-select]")) sel.value = root.dataset.theme;
+    for (const b of document.querySelectorAll("[data-theme-buttons] button")) {
+      const active = b.value === root.dataset.theme;
+      b.className = active ? on : off;
+      b.setAttribute("aria-pressed", String(active));
+    }
+  };
+
+  for (const sel of document.querySelectorAll("[data-theme-select]")) {
+    sel.innerHTML = themes.map(([id, name]) => \`<option value="\${id}">\${name}</option>\`).join("");
+    sel.onchange = () => set(sel.value);
+  }
+  for (const box of document.querySelectorAll("[data-theme-buttons]")) {
+    box.innerHTML = themes.map(([id, name]) => \`<button type="button" value="\${id}">\${name}</button>\`).join("");
+    box.onclick = (e) => { const b = e.target.closest("button"); if (b) set(b.value); };
+  }
+  sync();
+})();
+`;
+writeFileSync(new URL("../docs/theme.js", import.meta.url), themeScript);

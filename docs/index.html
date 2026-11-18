@@ -7,6 +7,7 @@
   <meta name="description" content="내 모든 앱이 함께 쓰는 디자인 시스템. Tailwind 클래스로 바로 쓴다." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
   <link rel="stylesheet" href="site.css" />
+  <script>try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch{}</script>
 </head>
 <body class="min-h-screen">
 
@@ -24,6 +25,7 @@
         <a href="#native" class="hover:text-foreground">앱</a>
       </div>
       <a href="https://github.com/ckdtjs505/sonia-ui" class="ml-auto rounded-pill border border-border px-md py-xs text-label md:ml-0">GitHub</a>
+      <select data-theme-select aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"></select>
     </nav>
   </header>
 
@@ -60,7 +62,7 @@
           <button class="flex-1 rounded-md border border-border py-md text-label">나중에</button>
         </div>
         <p class="mt-xl text-overline">테마 바꿔 보기</p>
-        <div id="theme-buttons" class="mt-s flex flex-wrap gap-s"></div>
+        <div data-theme-buttons class="mt-s flex flex-wrap gap-s"></div>
       </div>
     </div>
   </section>
@@ -172,25 +174,6 @@ import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
   </footer>
 
   <script>
-    const themes = [["light","라이트"],["dark","다크"],["nature","숲"],["ocean","바다"],["sunset","노을"],["sepia","세피아"],["ember","잉걸불"],["gold","황금 불꽃"]];
-    const root = document.documentElement;
-    const box = document.getElementById("theme-buttons");
-    const render = () => {
-      box.innerHTML = "";
-      for (const [id, name] of themes) {
-        const b = document.createElement("button");
-        b.textContent = name;
-        b.setAttribute("aria-pressed", String(root.dataset.theme === id));
-        b.className = root.dataset.theme === id
-          ? "rounded-pill bg-primary px-md py-xs text-label text-on-primary"
-          : "rounded-pill border border-border px-md py-xs text-label text-muted";
-        b.onclick = () => { root.dataset.theme = id; try { localStorage.setItem("theme", id); } catch {} render(); };
-        box.appendChild(b);
-      }
-    };
-    try { const saved = localStorage.getItem("theme"); if (saved) root.dataset.theme = saved; } catch {}
-    render();
-
     for (const btn of document.querySelectorAll("[data-copy]")) {
       btn.onclick = async () => {
         const label = btn.querySelector(".copy-label");
@@ -200,5 +183,6 @@ import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
       };
     }
   </script>
+  <script src="theme.js"></script>
 </body>
 </html>
