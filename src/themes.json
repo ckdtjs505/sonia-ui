@@ -1,0 +1,47 @@
+[
+  {
+    "id": "light",
+    "name": "라이트",
+    "scheme": "light"
+  },
+  {
+    "id": "dark",
+    "name": "다크",
+    "scheme": "dark"
+  },
+  {
+    "id": "nature",
+    "name": "숲",
+    "scheme": "light"
+  },
+  {
+    "id": "ocean",
+    "name": "바다",
+    "scheme": "dark"
+  },
+  {
+    "id": "sunset",
+    "name": "노을",
+    "scheme": "dark"
+  },
+  {
+    "id": "sepia",
+    "name": "세피아",
+    "scheme": "light"
+  },
+  {
+    "id": "ember",
+    "name": "잉걸불",
+    "scheme": "dark"
+  },
+  {
+    "id": "gold",
+    "name": "황금 불꽃",
+    "scheme": "dark"
+  },
+  {
+    "id": "sonia",
+    "name": "블로그",
+    "scheme": "dark"
+  }
+]

@@ -103,3 +103,8 @@ ${indentText(componentsCss)}
 `);
 
 console.log(`css: ${tokenVars.length} tokens, ${themeList.length} themes`);
+
+// 4) 순수 JS 프로젝트용 테마 목록: [{ id, name, scheme: "light" | "dark" }]
+write("../src/themes.json", JSON.stringify(themeList.map(({ id, name, theme }) => ({
+  id, name, scheme: (theme as { barStyle: string }).barStyle === "light" ? "dark" : "light",
+})), null, 2) + "\n");

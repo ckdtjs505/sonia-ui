@@ -21,7 +21,8 @@
     "./native": "./src/native/index.ts",
     "./tailwind.css": "./src/tailwind/theme.css",
     "./themes.css": "./src/css/themes.css",
-    "./base.css": "./src/css/base.css"
+    "./base.css": "./src/css/base.css",
+    "./themes.json": "./src/themes.json"
   },
   "peerDependenciesMeta": {
     "@shopify/restyle": {
