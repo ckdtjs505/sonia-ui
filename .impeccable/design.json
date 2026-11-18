@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T20:31:48.995963+00:00",
+  "title": "Design System: sonia-ui",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "종이 바탕"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "떠 있는 면"
+      },
+      "surface-muted": {
+        "role": "neutral",
+        "displayName": "움푹한 면"
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "먹색 글자"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "흐린 글자"
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "실선"
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "테라코타 불빛"
+      },
+      "primary-soft": {
+        "role": "primary",
+        "displayName": "옅은 테라코타"
+      },
+      "on-primary": {
+        "role": "primary",
+        "displayName": "강조 위 글자"
+      },
+      "flame": {
+        "role": "secondary",
+        "displayName": "불씨"
+      }
+    },
+    "motion": [
+      {
+        "name": "state-change",
+        "value": "0.15s",
+        "purpose": "버튼 배경·테두리·글자색 전환."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "0px"
+      },
+      {
+        "name": "tablet",
+        "value": "768px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "한 화면에 하나뿐인 주요 행동.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">저장</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-s);padding:var(--spacing-s) var(--spacing-lg);border:1px solid transparent;border-radius:var(--radius-sm);font:inherit;font-size:var(--text-label);font-weight:700;line-height:1.4;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}.ds-btn:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}.ds-btn-primary{background:var(--color-primary);color:var(--color-on-primary)}.ds-btn-primary:hover{background:color-mix(in srgb,var(--color-primary) 88%,var(--color-foreground))}"
+    },
+    {
+      "name": "Soft Button",
+      "kind": "button",
+      "refersTo": "button-soft",
+      "description": "두 번째로 중요한 행동.",
+      "html": "<button class=\"ds-btn ds-btn-soft\">임시 저장</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-s);padding:var(--spacing-s) var(--spacing-lg);border:1px solid transparent;border-radius:var(--radius-sm);font:inherit;font-size:var(--text-label);font-weight:700;line-height:1.4;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}.ds-btn:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}.ds-btn-soft{background:var(--color-primary-soft);color:var(--color-primary)}.ds-btn-soft:hover{background:color-mix(in srgb,var(--color-primary) 20%,transparent)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "중립 행동.",
+      "html": "<button class=\"ds-btn ds-btn-outline\">취소</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-s);padding:var(--spacing-s) var(--spacing-lg);border:1px solid transparent;border-radius:var(--radius-sm);font:inherit;font-size:var(--text-label);font-weight:700;line-height:1.4;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}.ds-btn:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}.ds-btn-outline{border-color:var(--color-border);background:transparent;color:var(--color-foreground)}.ds-btn-outline:hover{background:var(--color-surface-muted)}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "툴바·덜 중요한 행동.",
+      "html": "<button class=\"ds-btn ds-btn-ghost\">더 보기</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-s);padding:var(--spacing-s) var(--spacing-lg);border:1px solid transparent;border-radius:var(--radius-sm);font:inherit;font-size:var(--text-label);font-weight:700;line-height:1.4;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}.ds-btn:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}.ds-btn-ghost{background:transparent;color:var(--color-muted)}.ds-btn-ghost:hover{background:var(--color-surface-muted);color:var(--color-foreground)}"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "분류·상태 칩.",
+      "html": "<span class=\"ds-tag\">디자인</span> <span class=\"ds-tag ds-tag-muted\">메모</span>",
+      "css": ".ds-tag{display:inline-flex;align-items:center;gap:var(--spacing-xs);padding:2px var(--spacing-md);border-radius:var(--radius-pill);background:var(--color-primary-soft);color:var(--color-primary);font-size:var(--text-label);font-weight:700;line-height:1.6}.ds-tag-muted{background:var(--color-surface-muted);color:var(--color-muted)}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "바탕 위에 떠 있는 면. 그림자 없음.",
+      "html": "<div class=\"ds-card\"><strong>오늘의 모닥불</strong><p>12일째 이어가는 중</p></div>",
+      "css": ".ds-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--spacing-lg);color:var(--color-foreground)}.ds-card p{margin:var(--spacing-xs) 0 0;color:var(--color-muted);font-size:var(--text-caption)}"
+    },
+    {
+      "name": "Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "움푹한 면 위의 입력창.",
+      "html": "<input class=\"ds-input\" placeholder=\"할 일을 적어 주세요\">",
+      "css": ".ds-input{width:100%;box-sizing:border-box;padding:var(--spacing-s) var(--spacing-md);border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-surface-muted);color:var(--color-foreground);font:inherit;font-size:var(--text-body)}.ds-input::placeholder{color:var(--color-muted)}.ds-input:focus{outline:2px solid var(--color-primary);outline-offset:-1px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "한 사람의 작업대",
+    "overview": "한 사람이 여러 앱을 만들면서 늘 같은 손맛을 내기 위한 작업대다. 공구(간격·모서리·글자 단계와 `sn-*` 컴포넌트)는 언제나 같은 자리에 같은 모양으로 놓여 있다. 바뀌는 것은 작업대에 드는 빛, 곧 테마의 색뿐이다. 새 화면을 만들 때는 새 공구를 깎지 말고 있는 공구를 집어 든다.\n\n밀도는 모바일 앱 기준이다. 본문은 15px, 라벨은 13px 굵은 글자, 제목은 26px 800 굵기로 짧고 단단하다. 기본(라이트) 테마는 따뜻한 종이빛 바탕에 테라코타 주황 강조색 하나를 쓴다. 다른 테마는 같은 열 개의 색 역할에 숲·밤바다·노을·세피아·잉걸불 같은 값을 넣은 것이다. 층은 바탕, 면, 움푹한 면의 세 단계 색과 아주 옅은 테두리로 나눈다. 그림자는 평소에 쓰지 않는다.",
+    "keyCharacteristics": [
+      "열 개의 색 역할은 고정이고, 테마는 값만 바꾼다(`<html data-theme>` 하나로 전환).",
+      "강조색은 한 테마에 하나(primary), 따로 불씨색(flame)은 실천·연속 기록에만 쓴다.",
+      "둥글고 단단한 모양: 넉넉한 모서리(10·16px)와 굵은 라벨(700).",
+      "평소에는 평평하고, 떠오르는 요소에만 그림자를 쓴다.",
+      "웹과 Expo가 같은 토큰을 쓴다."
+    ],
+    "rules": [
+      {
+        "name": "The Role-Not-Hex Rule",
+        "body": "화면 코드에 hex·rgba를 쓰지 않는다. `bg-primary`, `var(--color-surface)`처럼 역할 이름만 쓴다. 역할 이름으로 쓰지 않으면 테마를 바꿔도 그 부분은 따라 바뀌지 않는다.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Light Rule",
+        "body": "강조색(primary)은 한 테마에 하나다. 두 번째 강조색이 필요해 보이면 soft·muted 단계로 풀고, 새 색 역할은 이 저장소에서만 추가한다.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Separate Dark Rule",
+        "body": "다크 모드도 테마 하나일 뿐이다. 화면에 `dark:` 분기나 테마별 예외 스타일을 두지 않는다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Named Step Rule",
+        "body": "글자 크기를 숫자로 쓰지 않는다. `text-title`, `text-label` 같은 단계 이름(Expo는 `variant`)만 쓴다. 맞는 단계가 없으면 이 저장소에 단계를 추가한다.",
+        "section": "typography"
+      },
+      {
+        "name": "The Named Step Rule (간격)",
+        "body": "`p-lg`, `gap-s`처럼 이름 단계만 쓴다. px를 직접 적지 않는다.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat-At-Rest Rule",
+        "body": "카드·버튼·입력은 그림자 없이 둔다. 그림자는 '지금 떠 있다'는 상태를 알릴 때만 쓴다.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** 색은 역할 이름(`bg-primary`, `var(--color-surface)`), 간격·모서리·글자는 이름 단계(`p-lg`, `rounded-md`, `text-title`)로만 쓴다.",
+      "**Do** 버튼·카드·태그·입력은 `sn-btn`·`sn-card`·`sn-tag`·`sn-input` 조합으로 만든다.",
+      "**Do** 층은 바탕 → surface → surface-muted 순서로 쌓는다.",
+      "**Do** 값을 바꿔야 하면 쓰는 프로젝트가 아니라 이 저장소의 `src/tokens/*.ts`를 고친다.",
+      "**Do** 새 화면은 라이트·다크와 다른 테마 하나 이상으로 바꿔 보며 확인한다."
+    ],
+    "donts": [
+      "**Don't** hex·rgba·px 값을 화면 코드에 직접 쓰지 않는다.",
+      "**Don't** 다크 모드를 따로 만들거나 `dark:`·테마별 예외 스타일을 두지 않는다.",
+      "**Don't** 카드·버튼에 평소 그림자를 주지 않는다.",
+      "**Don't** 불씨색(flame)을 일반 버튼·링크 강조에 쓰지 않는다.",
+      "**Don't** 쓰는 프로젝트에서 `sn-*` 클래스를 덮어써 모양을 바꾸지 않는다."
+    ]
+  }
+}
