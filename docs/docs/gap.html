@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>gap - 간격 - sonia-ui</title>
+  <meta name="description" content="flex · grid 자식 사이 간격." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script>try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch{}</script>
+</head>
+<body>
+  <header class="sticky top-0 z-30 border-b border-border bg-background/90 backdrop-blur">
+    <div class="flex h-14 items-center gap-md px-lg">
+      <a href="../index.html" class="flex items-center gap-s text-heading text-foreground"><span class="inline-block size-5 rounded-xs bg-flame"></span>sonia-ui</a>
+      <span class="rounded-pill bg-surface-muted px-s py-[2px] text-micro">v1.0</span>
+      <div class="ml-auto flex items-center gap-lg text-label">
+        <a href="installation.html" class="text-foreground">Docs</a>
+        <a href="https://github.com/ckdtjs505/sonia-ui" class="text-muted hover:text-foreground">GitHub</a>
+        <select id="theme" aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"><option value="light">라이트</option><option value="dark">다크</option><option value="nature">숲</option><option value="ocean">바다</option><option value="sunset">노을</option><option value="sepia">세피아</option><option value="ember">잉걸불</option><option value="gold">황금 불꽃</option></select>
+      </div>
+    </div>
+    <div class="flex items-center gap-s border-t border-border px-lg py-s text-caption lg:hidden">
+      <button id="menu" aria-label="메뉴" class="text-foreground">☰</button><span>간격</span><span>›</span><span class="text-foreground">gap</span>
+    </div>
+  </header>
+
+  <div class="mx-auto flex max-w-[1440px]">
+    <nav id="sidebar" class="fixed inset-y-0 left-0 top-14 z-20 hidden w-72 overflow-y-auto border-r border-border bg-background px-xl py-xl lg:sticky lg:block lg:h-[calc(100vh-3.5rem)]">
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">시작하기</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="installation.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">설치</a></li>
+    <li><a href="expo.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">앱 (Expo)</a></li>
+    <li><a href="themes.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">테마</a></li>
+    <li><a href="customizing.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">값 고치기</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">색</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="colors.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">색</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">간격</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="padding.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">padding</a></li>
+    <li><a href="margin.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">margin</a></li>
+    <li><a href="gap.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-primary font-semibold text-primary">gap</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">모서리</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="border-radius.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">border-radius</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">글자</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="font-size.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">font-size</a></li>
+  </ul></nav>
+
+    <main class="min-w-0 flex-1 px-lg py-xxl sm:px-xxl">
+      <div class="mx-auto max-w-3xl">
+        <p class="text-overline uppercase text-primary">간격</p>
+        <h1 class="mt-s text-3xl font-extrabold tracking-tight text-foreground">gap</h1>
+        <p class="mt-md text-lg text-muted">flex · grid 자식 사이 간격.</p>
+        <section id="reference" class="scroll-mt-24">
+<div class="table-wrap relative mt-xl collapsed">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-caption">
+      <thead><tr class="border-b border-border"><th class="py-s pr-lg text-label">Class</th><th class="py-s text-label">Styles</th></tr></thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-0</td><td class="py-s font-mono whitespace-pre text-muted">gap: var(--spacing-0); /* 0px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-xs</td><td class="py-s font-mono whitespace-pre text-muted">gap: var(--spacing-xs); /* 4px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-s</td><td class="py-s font-mono whitespace-pre text-muted">gap: var(--spacing-s); /* 8px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-md</td><td class="py-s font-mono whitespace-pre text-muted">gap: var(--spacing-md); /* 12px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-lg</td><td class="py-s font-mono whitespace-pre text-muted">gap: var(--spacing-lg); /* 16px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-xl</td><td class="py-s font-mono whitespace-pre text-muted">gap: var(--spacing-xl); /* 24px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-xxl</td><td class="py-s font-mono whitespace-pre text-muted">gap: var(--spacing-xxl); /* 48px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-hg</td><td class="py-s font-mono whitespace-pre text-muted">gap: var(--spacing-hg); /* 128px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-x-0</td><td class="py-s font-mono whitespace-pre text-muted">column-gap: var(--spacing-0); /* 0px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-x-xs</td><td class="py-s font-mono whitespace-pre text-muted">column-gap: var(--spacing-xs); /* 4px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-x-s</td><td class="py-s font-mono whitespace-pre text-muted">column-gap: var(--spacing-s); /* 8px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-x-md</td><td class="py-s font-mono whitespace-pre text-muted">column-gap: var(--spacing-md); /* 12px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-x-lg</td><td class="py-s font-mono whitespace-pre text-muted">column-gap: var(--spacing-lg); /* 16px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-x-xl</td><td class="py-s font-mono whitespace-pre text-muted">column-gap: var(--spacing-xl); /* 24px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-x-xxl</td><td class="py-s font-mono whitespace-pre text-muted">column-gap: var(--spacing-xxl); /* 48px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-x-hg</td><td class="py-s font-mono whitespace-pre text-muted">column-gap: var(--spacing-hg); /* 128px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-y-0</td><td class="py-s font-mono whitespace-pre text-muted">row-gap: var(--spacing-0); /* 0px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-y-xs</td><td class="py-s font-mono whitespace-pre text-muted">row-gap: var(--spacing-xs); /* 4px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-y-s</td><td class="py-s font-mono whitespace-pre text-muted">row-gap: var(--spacing-s); /* 8px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-y-md</td><td class="py-s font-mono whitespace-pre text-muted">row-gap: var(--spacing-md); /* 12px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-y-lg</td><td class="py-s font-mono whitespace-pre text-muted">row-gap: var(--spacing-lg); /* 16px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-y-xl</td><td class="py-s font-mono whitespace-pre text-muted">row-gap: var(--spacing-xl); /* 24px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-y-xxl</td><td class="py-s font-mono whitespace-pre text-muted">row-gap: var(--spacing-xxl); /* 48px */</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">gap-y-hg</td><td class="py-s font-mono whitespace-pre text-muted">row-gap: var(--spacing-hg); /* 128px */</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="more absolute inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-background pt-xxl"><button class="rounded-pill bg-surface px-lg py-s text-micro uppercase text-foreground border border-border">더 보기</button></div>
+</div></section>
+        <p class="mt-xxl text-overline uppercase">예제</p>
+        <section id="basic" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#basic">기본</a></h2>
+<div class="mt-lg overflow-hidden rounded-xl border border-border">
+  <div class="flex flex-wrap items-center justify-center gap-xl bg-surface-muted px-lg py-xl"><div class="grid grid-cols-3 gap-xs"><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div></div><div class="grid grid-cols-3 gap-md"><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div></div><div class="grid grid-cols-3 gap-xl"><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div><div class="size-8 rounded-xs bg-primary"></div></div></div>
+  <div class="border-t border-border">
+<div class="overflow-hidden  bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">div</span> <span class="text-muted">class</span>=<span class="text-flame">"grid grid-cols-3 gap-xs"</span>&gt;...&lt;/<span class="text-primary">div</span>&gt;
+&lt;<span class="text-primary">div</span> <span class="text-muted">class</span>=<span class="text-flame">"grid grid-cols-3 gap-md"</span>&gt;...&lt;/<span class="text-primary">div</span>&gt;
+&lt;<span class="text-primary">div</span> <span class="text-muted">class</span>=<span class="text-flame">"grid grid-cols-3 gap-xl"</span>&gt;...&lt;/<span class="text-primary">div</span>&gt;</code></pre>
+</div></div>
+</div></section>
+        
+        <div class="mt-hg flex justify-between border-t border-border pt-xl text-label">
+          <a href="margin.html" class="text-muted hover:text-foreground">← margin</a>
+          <a href="border-radius.html" class="text-muted hover:text-foreground">border-radius →</a>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto py-xxl pr-xl xl:block">
+      <p class="text-label text-foreground">이 페이지</p>
+      <ul class="mt-md space-y-s text-caption"><li><a href="#reference" class="text-muted hover:text-foreground">빠른 참조</a></li><li><a href="#basic" class="text-muted hover:text-foreground">기본</a></li></ul>
+    </aside>
+  </div>
+
+  <script>
+    const sel = document.getElementById("theme");
+    sel.value = document.documentElement.dataset.theme;
+    sel.onchange = () => { document.documentElement.dataset.theme = sel.value; try { localStorage.setItem("theme", sel.value); } catch {} };
+    document.getElementById("menu").onclick = () => document.getElementById("sidebar").classList.toggle("hidden");
+    for (const w of document.querySelectorAll(".table-wrap.collapsed")) {
+      w.querySelector(".more button").onclick = () => { w.classList.remove("collapsed"); w.querySelector(".more").remove(); };
+    }
+  </script>
+</body>
+</html>

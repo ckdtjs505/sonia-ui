@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>font-size - 글자 - sonia-ui</title>
+  <meta name="description" content="글자 크기 · 굵기 · 자간을 한 클래스로. 앱의 &lt;Text variant&gt;와 같은 값." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script>try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch{}</script>
+</head>
+<body>
+  <header class="sticky top-0 z-30 border-b border-border bg-background/90 backdrop-blur">
+    <div class="flex h-14 items-center gap-md px-lg">
+      <a href="../index.html" class="flex items-center gap-s text-heading text-foreground"><span class="inline-block size-5 rounded-xs bg-flame"></span>sonia-ui</a>
+      <span class="rounded-pill bg-surface-muted px-s py-[2px] text-micro">v1.0</span>
+      <div class="ml-auto flex items-center gap-lg text-label">
+        <a href="installation.html" class="text-foreground">Docs</a>
+        <a href="https://github.com/ckdtjs505/sonia-ui" class="text-muted hover:text-foreground">GitHub</a>
+        <select id="theme" aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"><option value="light">라이트</option><option value="dark">다크</option><option value="nature">숲</option><option value="ocean">바다</option><option value="sunset">노을</option><option value="sepia">세피아</option><option value="ember">잉걸불</option><option value="gold">황금 불꽃</option></select>
+      </div>
+    </div>
+    <div class="flex items-center gap-s border-t border-border px-lg py-s text-caption lg:hidden">
+      <button id="menu" aria-label="메뉴" class="text-foreground">☰</button><span>글자</span><span>›</span><span class="text-foreground">font-size</span>
+    </div>
+  </header>
+
+  <div class="mx-auto flex max-w-[1440px]">
+    <nav id="sidebar" class="fixed inset-y-0 left-0 top-14 z-20 hidden w-72 overflow-y-auto border-r border-border bg-background px-xl py-xl lg:sticky lg:block lg:h-[calc(100vh-3.5rem)]">
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">시작하기</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="installation.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">설치</a></li>
+    <li><a href="expo.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">앱 (Expo)</a></li>
+    <li><a href="themes.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">테마</a></li>
+    <li><a href="customizing.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">값 고치기</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">색</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="colors.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">색</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">간격</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="padding.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">padding</a></li>
+    <li><a href="margin.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">margin</a></li>
+    <li><a href="gap.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">gap</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">모서리</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="border-radius.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">border-radius</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">글자</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="font-size.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-primary font-semibold text-primary">font-size</a></li>
+  </ul></nav>
+
+    <main class="min-w-0 flex-1 px-lg py-xxl sm:px-xxl">
+      <div class="mx-auto max-w-3xl">
+        <p class="text-overline uppercase text-primary">글자</p>
+        <h1 class="mt-s text-3xl font-extrabold tracking-tight text-foreground">font-size</h1>
+        <p class="mt-md text-lg text-muted">글자 크기 · 굵기 · 자간을 한 클래스로. 앱의 &lt;Text variant&gt;와 같은 값.</p>
+        <section id="reference" class="scroll-mt-24">
+<div class="table-wrap relative mt-xl ">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-caption">
+      <thead><tr class="border-b border-border"><th class="py-s pr-lg text-label">Class</th><th class="py-s text-label">Styles</th></tr></thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">text-display</td><td class="py-s font-mono whitespace-pre text-muted">font-size: 34px;
+font-weight: 900;
+letter-spacing: -0.8px;</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">text-title</td><td class="py-s font-mono whitespace-pre text-muted">font-size: 26px;
+font-weight: 800;
+letter-spacing: -0.6px;</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">text-heading</td><td class="py-s font-mono whitespace-pre text-muted">font-size: 19px;
+font-weight: 700;
+letter-spacing: -0.3px;</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">text-body</td><td class="py-s font-mono whitespace-pre text-muted">font-size: 15px;
+font-weight: 500;</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">text-caption</td><td class="py-s font-mono whitespace-pre text-muted">font-size: 13px;</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">text-label</td><td class="py-s font-mono whitespace-pre text-muted">font-size: 13px;
+font-weight: 700;</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">text-stat</td><td class="py-s font-mono whitespace-pre text-muted">font-size: 15px;
+font-weight: 800;</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">text-micro</td><td class="py-s font-mono whitespace-pre text-muted">font-size: 11px;
+font-weight: 600;</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">text-overline</td><td class="py-s font-mono whitespace-pre text-muted">font-size: 12px;
+font-weight: 700;
+letter-spacing: 0.4px;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div></section>
+        <p class="mt-xxl text-overline uppercase">예제</p>
+        <section id="scale" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#scale">단계</a></h2><div class="mt-lg divide-y divide-border rounded-xl border border-border">
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-32 shrink-0 text-caption text-primary">text-display</code><span class="text-display text-foreground">작은 불씨가 큰 들을 태운다</span></div>
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-32 shrink-0 text-caption text-primary">text-title</code><span class="text-title text-foreground">작은 불씨가 큰 들을 태운다</span></div>
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-32 shrink-0 text-caption text-primary">text-heading</code><span class="text-heading text-foreground">작은 불씨가 큰 들을 태운다</span></div>
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-32 shrink-0 text-caption text-primary">text-body</code><span class="text-body text-foreground">작은 불씨가 큰 들을 태운다</span></div>
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-32 shrink-0 text-caption text-primary">text-caption</code><span class="text-caption text-muted">작은 불씨가 큰 들을 태운다</span></div>
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-32 shrink-0 text-caption text-primary">text-label</code><span class="text-label text-foreground">작은 불씨가 큰 들을 태운다</span></div>
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-32 shrink-0 text-caption text-primary">text-stat</code><span class="text-stat text-foreground">작은 불씨가 큰 들을 태운다</span></div>
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-32 shrink-0 text-caption text-primary">text-micro</code><span class="text-micro text-muted">작은 불씨가 큰 들을 태운다</span></div>
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-32 shrink-0 text-caption text-primary">text-overline</code><span class="text-overline text-muted">작은 불씨가 큰 들을 태운다</span></div></div></section><section id="color" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#color">색은 따로</a></h2><p class="mt-md text-body leading-7 text-muted">Tailwind처럼 크기와 색을 나눈다. 보조 글자는 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">text-caption text-muted</code>처럼 함께 쓴다.</p>
+<div class="mt-lg overflow-hidden rounded-xl border border-border">
+  <div class="flex flex-wrap items-center justify-center gap-xl bg-surface-muted px-lg py-xl"><div class="w-64"><p class="text-overline uppercase text-muted">오늘</p><p class="text-title">불 지피기</p><p class="text-caption text-muted">3분이면 끝나요</p></div></div>
+  <div class="border-t border-border">
+<div class="overflow-hidden  bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">p</span> <span class="text-muted">class</span>=<span class="text-flame">"text-overline uppercase text-muted"</span>&gt;오늘&lt;/<span class="text-primary">p</span>&gt;
+&lt;<span class="text-primary">p</span> <span class="text-muted">class</span>=<span class="text-flame">"text-title"</span>&gt;불 지피기&lt;/<span class="text-primary">p</span>&gt;
+&lt;<span class="text-primary">p</span> <span class="text-muted">class</span>=<span class="text-flame">"text-caption text-muted"</span>&gt;3분이면 끝나요&lt;/<span class="text-primary">p</span>&gt;</code></pre>
+</div></div>
+</div></section>
+        
+        <div class="mt-hg flex justify-between border-t border-border pt-xl text-label">
+          <a href="border-radius.html" class="text-muted hover:text-foreground">← border-radius</a>
+          
+        </div>
+      </div>
+    </main>
+
+    <aside class="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto py-xxl pr-xl xl:block">
+      <p class="text-label text-foreground">이 페이지</p>
+      <ul class="mt-md space-y-s text-caption"><li><a href="#reference" class="text-muted hover:text-foreground">빠른 참조</a></li><li><a href="#scale" class="text-muted hover:text-foreground">단계</a></li><li><a href="#color" class="text-muted hover:text-foreground">색은 따로</a></li></ul>
+    </aside>
+  </div>
+
+  <script>
+    const sel = document.getElementById("theme");
+    sel.value = document.documentElement.dataset.theme;
+    sel.onchange = () => { document.documentElement.dataset.theme = sel.value; try { localStorage.setItem("theme", sel.value); } catch {} };
+    document.getElementById("menu").onclick = () => document.getElementById("sidebar").classList.toggle("hidden");
+    for (const w of document.querySelectorAll(".table-wrap.collapsed")) {
+      w.querySelector(".more button").onclick = () => { w.classList.remove("collapsed"); w.querySelector(".more").remove(); };
+    }
+  </script>
+</body>
+</html>

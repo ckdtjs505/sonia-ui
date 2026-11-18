@@ -7,7 +7,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsx scripts/build-css.ts && tailwindcss -i docs/input.css -o docs/site.css --minify",
+    "build": "tsx scripts/build-css.ts && tsx scripts/build-docs.ts && tailwindcss -i docs/input.css -o docs/site.css --minify",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

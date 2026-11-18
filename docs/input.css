@@ -1,9 +1,18 @@
 @import "tailwindcss";
 @import "../src/tailwind/theme.css";
 @source "./index.html";
+@source "./docs";
 
 @layer base {
   html { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; }
   body { @apply bg-background text-foreground antialiased; }
   pre, code { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
 }
+
+/* padding·margin 예제에서 여백을 빗금으로 보여 준다 */
+.hatch {
+  background-image: repeating-linear-gradient(45deg, color-mix(in srgb, var(--color-primary) 35%, transparent) 0 1px, transparent 1px 7px);
+  outline: 1px dashed color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+
+.table-wrap.collapsed { max-height: 26rem; overflow: hidden; }

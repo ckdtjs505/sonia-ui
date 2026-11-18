@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>색 - 색 - sonia-ui</title>
+  <meta name="description" content="색은 값이 아니라 역할로 부른다. bg-* · text-* · border-* · ring-* 어디에나 붙는다." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script>try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch{}</script>
+</head>
+<body>
+  <header class="sticky top-0 z-30 border-b border-border bg-background/90 backdrop-blur">
+    <div class="flex h-14 items-center gap-md px-lg">
+      <a href="../index.html" class="flex items-center gap-s text-heading text-foreground"><span class="inline-block size-5 rounded-xs bg-flame"></span>sonia-ui</a>
+      <span class="rounded-pill bg-surface-muted px-s py-[2px] text-micro">v1.0</span>
+      <div class="ml-auto flex items-center gap-lg text-label">
+        <a href="installation.html" class="text-foreground">Docs</a>
+        <a href="https://github.com/ckdtjs505/sonia-ui" class="text-muted hover:text-foreground">GitHub</a>
+        <select id="theme" aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"><option value="light">라이트</option><option value="dark">다크</option><option value="nature">숲</option><option value="ocean">바다</option><option value="sunset">노을</option><option value="sepia">세피아</option><option value="ember">잉걸불</option><option value="gold">황금 불꽃</option></select>
+      </div>
+    </div>
+    <div class="flex items-center gap-s border-t border-border px-lg py-s text-caption lg:hidden">
+      <button id="menu" aria-label="메뉴" class="text-foreground">☰</button><span>색</span><span>›</span><span class="text-foreground">색</span>
+    </div>
+  </header>
+
+  <div class="mx-auto flex max-w-[1440px]">
+    <nav id="sidebar" class="fixed inset-y-0 left-0 top-14 z-20 hidden w-72 overflow-y-auto border-r border-border bg-background px-xl py-xl lg:sticky lg:block lg:h-[calc(100vh-3.5rem)]">
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">시작하기</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="installation.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">설치</a></li>
+    <li><a href="expo.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">앱 (Expo)</a></li>
+    <li><a href="themes.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">테마</a></li>
+    <li><a href="customizing.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">값 고치기</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">색</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="colors.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-primary font-semibold text-primary">색</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">간격</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="padding.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">padding</a></li>
+    <li><a href="margin.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">margin</a></li>
+    <li><a href="gap.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">gap</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">모서리</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="border-radius.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">border-radius</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">글자</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="font-size.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">font-size</a></li>
+  </ul></nav>
+
+    <main class="min-w-0 flex-1 px-lg py-xxl sm:px-xxl">
+      <div class="mx-auto max-w-3xl">
+        <p class="text-overline uppercase text-primary">색</p>
+        <h1 class="mt-s text-3xl font-extrabold tracking-tight text-foreground">색</h1>
+        <p class="mt-md text-lg text-muted">색은 값이 아니라 역할로 부른다. bg-* · text-* · border-* · ring-* 어디에나 붙는다.</p>
+        <section id="reference" class="scroll-mt-24">
+<div class="table-wrap relative mt-xl ">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-caption">
+      <thead><tr class="border-b border-border"><th class="py-s pr-lg text-label">Class</th><th class="py-s text-label">Styles</th></tr></thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-background</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-background);</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-surface</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-surface);</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-surface-muted</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-surface-muted);</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-foreground</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-foreground);</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-muted</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-muted);</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-border</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-border);</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-primary</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-primary);</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-primary-soft</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-primary-soft);</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-on-primary</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-on-primary);</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">bg-flame</td><td class="py-s font-mono whitespace-pre text-muted">background-color: var(--color-flame);</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div></section>
+        <p class="mt-xxl text-overline uppercase">예제</p>
+        <section id="palette" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#palette">테마별 팔레트</a></h2>
+        <div data-theme="light" class="mt-md rounded-lg border border-border bg-background p-md">
+          <p class="text-label text-foreground">라이트 <span class="text-micro text-muted">light</span></p>
+          <div class="mt-s grid grid-cols-5 gap-s sm:grid-cols-10"><div><div class="h-10 rounded-sm border border-border bg-background"></div><p class="mt-xs truncate text-micro text-muted">background</p></div><div><div class="h-10 rounded-sm border border-border bg-surface"></div><p class="mt-xs truncate text-micro text-muted">surface</p></div><div><div class="h-10 rounded-sm border border-border bg-surface-muted"></div><p class="mt-xs truncate text-micro text-muted">surface-muted</p></div><div><div class="h-10 rounded-sm border border-border bg-foreground"></div><p class="mt-xs truncate text-micro text-muted">foreground</p></div><div><div class="h-10 rounded-sm border border-border bg-muted"></div><p class="mt-xs truncate text-micro text-muted">muted</p></div><div><div class="h-10 rounded-sm border border-border bg-border"></div><p class="mt-xs truncate text-micro text-muted">border</p></div><div><div class="h-10 rounded-sm border border-border bg-primary"></div><p class="mt-xs truncate text-micro text-muted">primary</p></div><div><div class="h-10 rounded-sm border border-border bg-primary-soft"></div><p class="mt-xs truncate text-micro text-muted">primary-soft</p></div><div><div class="h-10 rounded-sm border border-border bg-on-primary"></div><p class="mt-xs truncate text-micro text-muted">on-primary</p></div><div><div class="h-10 rounded-sm border border-border bg-flame"></div><p class="mt-xs truncate text-micro text-muted">flame</p></div></div>
+        </div>
+        <div data-theme="dark" class="mt-md rounded-lg border border-border bg-background p-md">
+          <p class="text-label text-foreground">다크 <span class="text-micro text-muted">dark</span></p>
+          <div class="mt-s grid grid-cols-5 gap-s sm:grid-cols-10"><div><div class="h-10 rounded-sm border border-border bg-background"></div><p class="mt-xs truncate text-micro text-muted">background</p></div><div><div class="h-10 rounded-sm border border-border bg-surface"></div><p class="mt-xs truncate text-micro text-muted">surface</p></div><div><div class="h-10 rounded-sm border border-border bg-surface-muted"></div><p class="mt-xs truncate text-micro text-muted">surface-muted</p></div><div><div class="h-10 rounded-sm border border-border bg-foreground"></div><p class="mt-xs truncate text-micro text-muted">foreground</p></div><div><div class="h-10 rounded-sm border border-border bg-muted"></div><p class="mt-xs truncate text-micro text-muted">muted</p></div><div><div class="h-10 rounded-sm border border-border bg-border"></div><p class="mt-xs truncate text-micro text-muted">border</p></div><div><div class="h-10 rounded-sm border border-border bg-primary"></div><p class="mt-xs truncate text-micro text-muted">primary</p></div><div><div class="h-10 rounded-sm border border-border bg-primary-soft"></div><p class="mt-xs truncate text-micro text-muted">primary-soft</p></div><div><div class="h-10 rounded-sm border border-border bg-on-primary"></div><p class="mt-xs truncate text-micro text-muted">on-primary</p></div><div><div class="h-10 rounded-sm border border-border bg-flame"></div><p class="mt-xs truncate text-micro text-muted">flame</p></div></div>
+        </div>
+        <div data-theme="nature" class="mt-md rounded-lg border border-border bg-background p-md">
+          <p class="text-label text-foreground">숲 <span class="text-micro text-muted">nature</span></p>
+          <div class="mt-s grid grid-cols-5 gap-s sm:grid-cols-10"><div><div class="h-10 rounded-sm border border-border bg-background"></div><p class="mt-xs truncate text-micro text-muted">background</p></div><div><div class="h-10 rounded-sm border border-border bg-surface"></div><p class="mt-xs truncate text-micro text-muted">surface</p></div><div><div class="h-10 rounded-sm border border-border bg-surface-muted"></div><p class="mt-xs truncate text-micro text-muted">surface-muted</p></div><div><div class="h-10 rounded-sm border border-border bg-foreground"></div><p class="mt-xs truncate text-micro text-muted">foreground</p></div><div><div class="h-10 rounded-sm border border-border bg-muted"></div><p class="mt-xs truncate text-micro text-muted">muted</p></div><div><div class="h-10 rounded-sm border border-border bg-border"></div><p class="mt-xs truncate text-micro text-muted">border</p></div><div><div class="h-10 rounded-sm border border-border bg-primary"></div><p class="mt-xs truncate text-micro text-muted">primary</p></div><div><div class="h-10 rounded-sm border border-border bg-primary-soft"></div><p class="mt-xs truncate text-micro text-muted">primary-soft</p></div><div><div class="h-10 rounded-sm border border-border bg-on-primary"></div><p class="mt-xs truncate text-micro text-muted">on-primary</p></div><div><div class="h-10 rounded-sm border border-border bg-flame"></div><p class="mt-xs truncate text-micro text-muted">flame</p></div></div>
+        </div>
+        <div data-theme="ocean" class="mt-md rounded-lg border border-border bg-background p-md">
+          <p class="text-label text-foreground">바다 <span class="text-micro text-muted">ocean</span></p>
+          <div class="mt-s grid grid-cols-5 gap-s sm:grid-cols-10"><div><div class="h-10 rounded-sm border border-border bg-background"></div><p class="mt-xs truncate text-micro text-muted">background</p></div><div><div class="h-10 rounded-sm border border-border bg-surface"></div><p class="mt-xs truncate text-micro text-muted">surface</p></div><div><div class="h-10 rounded-sm border border-border bg-surface-muted"></div><p class="mt-xs truncate text-micro text-muted">surface-muted</p></div><div><div class="h-10 rounded-sm border border-border bg-foreground"></div><p class="mt-xs truncate text-micro text-muted">foreground</p></div><div><div class="h-10 rounded-sm border border-border bg-muted"></div><p class="mt-xs truncate text-micro text-muted">muted</p></div><div><div class="h-10 rounded-sm border border-border bg-border"></div><p class="mt-xs truncate text-micro text-muted">border</p></div><div><div class="h-10 rounded-sm border border-border bg-primary"></div><p class="mt-xs truncate text-micro text-muted">primary</p></div><div><div class="h-10 rounded-sm border border-border bg-primary-soft"></div><p class="mt-xs truncate text-micro text-muted">primary-soft</p></div><div><div class="h-10 rounded-sm border border-border bg-on-primary"></div><p class="mt-xs truncate text-micro text-muted">on-primary</p></div><div><div class="h-10 rounded-sm border border-border bg-flame"></div><p class="mt-xs truncate text-micro text-muted">flame</p></div></div>
+        </div>
+        <div data-theme="sunset" class="mt-md rounded-lg border border-border bg-background p-md">
+          <p class="text-label text-foreground">노을 <span class="text-micro text-muted">sunset</span></p>
+          <div class="mt-s grid grid-cols-5 gap-s sm:grid-cols-10"><div><div class="h-10 rounded-sm border border-border bg-background"></div><p class="mt-xs truncate text-micro text-muted">background</p></div><div><div class="h-10 rounded-sm border border-border bg-surface"></div><p class="mt-xs truncate text-micro text-muted">surface</p></div><div><div class="h-10 rounded-sm border border-border bg-surface-muted"></div><p class="mt-xs truncate text-micro text-muted">surface-muted</p></div><div><div class="h-10 rounded-sm border border-border bg-foreground"></div><p class="mt-xs truncate text-micro text-muted">foreground</p></div><div><div class="h-10 rounded-sm border border-border bg-muted"></div><p class="mt-xs truncate text-micro text-muted">muted</p></div><div><div class="h-10 rounded-sm border border-border bg-border"></div><p class="mt-xs truncate text-micro text-muted">border</p></div><div><div class="h-10 rounded-sm border border-border bg-primary"></div><p class="mt-xs truncate text-micro text-muted">primary</p></div><div><div class="h-10 rounded-sm border border-border bg-primary-soft"></div><p class="mt-xs truncate text-micro text-muted">primary-soft</p></div><div><div class="h-10 rounded-sm border border-border bg-on-primary"></div><p class="mt-xs truncate text-micro text-muted">on-primary</p></div><div><div class="h-10 rounded-sm border border-border bg-flame"></div><p class="mt-xs truncate text-micro text-muted">flame</p></div></div>
+        </div>
+        <div data-theme="sepia" class="mt-md rounded-lg border border-border bg-background p-md">
+          <p class="text-label text-foreground">세피아 <span class="text-micro text-muted">sepia</span></p>
+          <div class="mt-s grid grid-cols-5 gap-s sm:grid-cols-10"><div><div class="h-10 rounded-sm border border-border bg-background"></div><p class="mt-xs truncate text-micro text-muted">background</p></div><div><div class="h-10 rounded-sm border border-border bg-surface"></div><p class="mt-xs truncate text-micro text-muted">surface</p></div><div><div class="h-10 rounded-sm border border-border bg-surface-muted"></div><p class="mt-xs truncate text-micro text-muted">surface-muted</p></div><div><div class="h-10 rounded-sm border border-border bg-foreground"></div><p class="mt-xs truncate text-micro text-muted">foreground</p></div><div><div class="h-10 rounded-sm border border-border bg-muted"></div><p class="mt-xs truncate text-micro text-muted">muted</p></div><div><div class="h-10 rounded-sm border border-border bg-border"></div><p class="mt-xs truncate text-micro text-muted">border</p></div><div><div class="h-10 rounded-sm border border-border bg-primary"></div><p class="mt-xs truncate text-micro text-muted">primary</p></div><div><div class="h-10 rounded-sm border border-border bg-primary-soft"></div><p class="mt-xs truncate text-micro text-muted">primary-soft</p></div><div><div class="h-10 rounded-sm border border-border bg-on-primary"></div><p class="mt-xs truncate text-micro text-muted">on-primary</p></div><div><div class="h-10 rounded-sm border border-border bg-flame"></div><p class="mt-xs truncate text-micro text-muted">flame</p></div></div>
+        </div>
+        <div data-theme="ember" class="mt-md rounded-lg border border-border bg-background p-md">
+          <p class="text-label text-foreground">잉걸불 <span class="text-micro text-muted">ember</span></p>
+          <div class="mt-s grid grid-cols-5 gap-s sm:grid-cols-10"><div><div class="h-10 rounded-sm border border-border bg-background"></div><p class="mt-xs truncate text-micro text-muted">background</p></div><div><div class="h-10 rounded-sm border border-border bg-surface"></div><p class="mt-xs truncate text-micro text-muted">surface</p></div><div><div class="h-10 rounded-sm border border-border bg-surface-muted"></div><p class="mt-xs truncate text-micro text-muted">surface-muted</p></div><div><div class="h-10 rounded-sm border border-border bg-foreground"></div><p class="mt-xs truncate text-micro text-muted">foreground</p></div><div><div class="h-10 rounded-sm border border-border bg-muted"></div><p class="mt-xs truncate text-micro text-muted">muted</p></div><div><div class="h-10 rounded-sm border border-border bg-border"></div><p class="mt-xs truncate text-micro text-muted">border</p></div><div><div class="h-10 rounded-sm border border-border bg-primary"></div><p class="mt-xs truncate text-micro text-muted">primary</p></div><div><div class="h-10 rounded-sm border border-border bg-primary-soft"></div><p class="mt-xs truncate text-micro text-muted">primary-soft</p></div><div><div class="h-10 rounded-sm border border-border bg-on-primary"></div><p class="mt-xs truncate text-micro text-muted">on-primary</p></div><div><div class="h-10 rounded-sm border border-border bg-flame"></div><p class="mt-xs truncate text-micro text-muted">flame</p></div></div>
+        </div>
+        <div data-theme="gold" class="mt-md rounded-lg border border-border bg-background p-md">
+          <p class="text-label text-foreground">황금 불꽃 <span class="text-micro text-muted">gold</span></p>
+          <div class="mt-s grid grid-cols-5 gap-s sm:grid-cols-10"><div><div class="h-10 rounded-sm border border-border bg-background"></div><p class="mt-xs truncate text-micro text-muted">background</p></div><div><div class="h-10 rounded-sm border border-border bg-surface"></div><p class="mt-xs truncate text-micro text-muted">surface</p></div><div><div class="h-10 rounded-sm border border-border bg-surface-muted"></div><p class="mt-xs truncate text-micro text-muted">surface-muted</p></div><div><div class="h-10 rounded-sm border border-border bg-foreground"></div><p class="mt-xs truncate text-micro text-muted">foreground</p></div><div><div class="h-10 rounded-sm border border-border bg-muted"></div><p class="mt-xs truncate text-micro text-muted">muted</p></div><div><div class="h-10 rounded-sm border border-border bg-border"></div><p class="mt-xs truncate text-micro text-muted">border</p></div><div><div class="h-10 rounded-sm border border-border bg-primary"></div><p class="mt-xs truncate text-micro text-muted">primary</p></div><div><div class="h-10 rounded-sm border border-border bg-primary-soft"></div><p class="mt-xs truncate text-micro text-muted">primary-soft</p></div><div><div class="h-10 rounded-sm border border-border bg-on-primary"></div><p class="mt-xs truncate text-micro text-muted">on-primary</p></div><div><div class="h-10 rounded-sm border border-border bg-flame"></div><p class="mt-xs truncate text-micro text-muted">flame</p></div></div>
+        </div></section><section id="roles" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#roles">역할</a></h2>
+<div class="table-wrap relative mt-xl ">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-caption">
+      <thead><tr class="border-b border-border"><th class="py-s pr-lg text-label">Class</th><th class="py-s text-label">Styles</th></tr></thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">background</td><td class="py-s font-mono whitespace-pre text-muted">화면 바탕</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">surface</td><td class="py-s font-mono whitespace-pre text-muted">카드·시트처럼 떠 있는 면</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">surface-muted</td><td class="py-s font-mono whitespace-pre text-muted">입력창·칩처럼 한 단계 들어간 영역</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">foreground</td><td class="py-s font-mono whitespace-pre text-muted">본문 글자</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">muted</td><td class="py-s font-mono whitespace-pre text-muted">보조 글자</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">border</td><td class="py-s font-mono whitespace-pre text-muted">얇은 구분선</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">primary</td><td class="py-s font-mono whitespace-pre text-muted">강조 · 주요 버튼</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">primary-soft</td><td class="py-s font-mono whitespace-pre text-muted">강조색을 옅게 깐 배경</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">on-primary</td><td class="py-s font-mono whitespace-pre text-muted">primary 위의 글자</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">flame</td><td class="py-s font-mono whitespace-pre text-muted">불씨 · 스트릭</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div></section><section id="example" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#example">예시</a></h2>
+<div class="mt-lg overflow-hidden rounded-xl border border-border">
+  <div class="flex flex-wrap items-center justify-center gap-xl bg-surface-muted px-lg py-xl"><div class="flex gap-md"><button class="rounded-md bg-primary px-lg py-s text-label text-on-primary">저장</button><button class="rounded-md bg-primary-soft px-lg py-s text-label text-primary">임시 저장</button><button class="rounded-md border border-border px-lg py-s text-label text-foreground">취소</button></div></div>
+  <div class="border-t border-border">
+<div class="overflow-hidden  bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"bg-primary text-on-primary ..."</span>&gt;저장&lt;/<span class="text-primary">button</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"bg-primary-soft text-primary ..."</span>&gt;임시 저장&lt;/<span class="text-primary">button</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"border border-border text-foreground ..."</span>&gt;취소&lt;/<span class="text-primary">button</span>&gt;</code></pre>
+</div></div>
+</div></section>
+        
+        <div class="mt-hg flex justify-between border-t border-border pt-xl text-label">
+          <a href="customizing.html" class="text-muted hover:text-foreground">← 값 고치기</a>
+          <a href="padding.html" class="text-muted hover:text-foreground">padding →</a>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto py-xxl pr-xl xl:block">
+      <p class="text-label text-foreground">이 페이지</p>
+      <ul class="mt-md space-y-s text-caption"><li><a href="#reference" class="text-muted hover:text-foreground">빠른 참조</a></li><li><a href="#palette" class="text-muted hover:text-foreground">테마별 팔레트</a></li><li><a href="#roles" class="text-muted hover:text-foreground">역할</a></li><li><a href="#example" class="text-muted hover:text-foreground">예시</a></li></ul>
+    </aside>
+  </div>
+
+  <script>
+    const sel = document.getElementById("theme");
+    sel.value = document.documentElement.dataset.theme;
+    sel.onchange = () => { document.documentElement.dataset.theme = sel.value; try { localStorage.setItem("theme", sel.value); } catch {} };
+    document.getElementById("menu").onclick = () => document.getElementById("sidebar").classList.toggle("hidden");
+    for (const w of document.querySelectorAll(".table-wrap.collapsed")) {
+      w.querySelector(".more button").onclick = () => { w.classList.remove("collapsed"); w.querySelector(".more").remove(); };
+    }
+  </script>
+</body>
+</html>

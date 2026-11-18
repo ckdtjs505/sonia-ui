@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>값 고치기 - 시작하기 - sonia-ui</title>
+  <meta name="description" content="값은 src/tokens 한 곳에만 있다. 고치고 빌드하면 Tailwind CSS · 앱 테마 · 이 문서가 같이 바뀐다." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script>try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch{}</script>
+</head>
+<body>
+  <header class="sticky top-0 z-30 border-b border-border bg-background/90 backdrop-blur">
+    <div class="flex h-14 items-center gap-md px-lg">
+      <a href="../index.html" class="flex items-center gap-s text-heading text-foreground"><span class="inline-block size-5 rounded-xs bg-flame"></span>sonia-ui</a>
+      <span class="rounded-pill bg-surface-muted px-s py-[2px] text-micro">v1.0</span>
+      <div class="ml-auto flex items-center gap-lg text-label">
+        <a href="installation.html" class="text-foreground">Docs</a>
+        <a href="https://github.com/ckdtjs505/sonia-ui" class="text-muted hover:text-foreground">GitHub</a>
+        <select id="theme" aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"><option value="light">라이트</option><option value="dark">다크</option><option value="nature">숲</option><option value="ocean">바다</option><option value="sunset">노을</option><option value="sepia">세피아</option><option value="ember">잉걸불</option><option value="gold">황금 불꽃</option></select>
+      </div>
+    </div>
+    <div class="flex items-center gap-s border-t border-border px-lg py-s text-caption lg:hidden">
+      <button id="menu" aria-label="메뉴" class="text-foreground">☰</button><span>시작하기</span><span>›</span><span class="text-foreground">값 고치기</span>
+    </div>
+  </header>
+
+  <div class="mx-auto flex max-w-[1440px]">
+    <nav id="sidebar" class="fixed inset-y-0 left-0 top-14 z-20 hidden w-72 overflow-y-auto border-r border-border bg-background px-xl py-xl lg:sticky lg:block lg:h-[calc(100vh-3.5rem)]">
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">시작하기</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="installation.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">설치</a></li>
+    <li><a href="expo.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">앱 (Expo)</a></li>
+    <li><a href="themes.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">테마</a></li>
+    <li><a href="customizing.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-primary font-semibold text-primary">값 고치기</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">색</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="colors.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">색</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">간격</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="padding.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">padding</a></li>
+    <li><a href="margin.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">margin</a></li>
+    <li><a href="gap.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">gap</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">모서리</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="border-radius.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">border-radius</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">글자</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="font-size.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">font-size</a></li>
+  </ul></nav>
+
+    <main class="min-w-0 flex-1 px-lg py-xxl sm:px-xxl">
+      <div class="mx-auto max-w-3xl">
+        <p class="text-overline uppercase text-primary">시작하기</p>
+        <h1 class="mt-s text-3xl font-extrabold tracking-tight text-foreground">값 고치기</h1>
+        <p class="mt-md text-lg text-muted">값은 src/tokens 한 곳에만 있다. 고치고 빌드하면 Tailwind CSS · 앱 테마 · 이 문서가 같이 바뀐다.</p>
+        
+        
+        <section id="edit" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#edit">1. tokens 고치기</a></h2>
+<div class="overflow-hidden rounded-lg border border-border bg-surface">
+  <div class="border-b border-border px-lg py-s text-micro">src/tokens/light.ts</div>
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code><span class="text-muted">// src/tokens/light.ts</span>
+spacing: { xs: 4, s: 8, md: 12, lg: 16, ... }</code></pre>
+</div></section><section id="build" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#build">2. 빌드</a></h2>
+<div class="overflow-hidden rounded-lg border border-border bg-surface">
+  <div class="border-b border-border px-lg py-s text-micro">Terminal</div>
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>npm run build</code></pre>
+</div><p class="mt-md text-body leading-7 text-muted"><code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">src/tailwind/theme.css</code>와 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">docs/</code>가 다시 만들어진다. 커밋·푸시하면 앱들은 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">npm i github:ckdtjs505/sonia-ui</code>로 최신을 받는다.</p></section><section id="new-theme" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#new-theme">새 테마 추가</a></h2>
+<div class="overflow-hidden rounded-lg border border-border bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code><span class="text-muted">// src/tokens/forest.ts</span>
+import light, { makeColors } from "./light";
+
+export default { ...light, colors: makeColors({ background: "#0E1A12", ... }), barStyle: "light" };</code></pre>
+</div><p class="mt-md text-body leading-7 text-muted">그다음 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">src/tokens/index.ts</code>의 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">themeList</code>와 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">ThemeId</code>에 추가한다.</p></section>
+        
+        <div class="mt-hg flex justify-between border-t border-border pt-xl text-label">
+          <a href="themes.html" class="text-muted hover:text-foreground">← 테마</a>
+          <a href="colors.html" class="text-muted hover:text-foreground">색 →</a>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto py-xxl pr-xl xl:block">
+      <p class="text-label text-foreground">이 페이지</p>
+      <ul class="mt-md space-y-s text-caption"><li><a href="#edit" class="text-muted hover:text-foreground">1. tokens 고치기</a></li><li><a href="#build" class="text-muted hover:text-foreground">2. 빌드</a></li><li><a href="#new-theme" class="text-muted hover:text-foreground">새 테마 추가</a></li></ul>
+    </aside>
+  </div>
+
+  <script>
+    const sel = document.getElementById("theme");
+    sel.value = document.documentElement.dataset.theme;
+    sel.onchange = () => { document.documentElement.dataset.theme = sel.value; try { localStorage.setItem("theme", sel.value); } catch {} };
+    document.getElementById("menu").onclick = () => document.getElementById("sidebar").classList.toggle("hidden");
+    for (const w of document.querySelectorAll(".table-wrap.collapsed")) {
+      w.querySelector(".more button").onclick = () => { w.classList.remove("collapsed"); w.querySelector(".more").remove(); };
+    }
+  </script>
+</body>
+</html>

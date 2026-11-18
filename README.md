@@ -1,7 +1,7 @@
 # sonia-ui
 
 내 모든 앱이 함께 쓰는 디자인 시스템. **Tailwind 클래스로 쓴다.**
-문서: https://ckdtjs505.github.io/sonia-ui/
+문서: https://ckdtjs505.github.io/sonia-ui/docs/installation.html
 
 ## 웹 (Tailwind v4)
 
