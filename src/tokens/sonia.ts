@@ -6,7 +6,7 @@ const theme = {
   colors: makeColors({
     background: "#0D1117", // --bg-color
     surface: "#161B22", // --card-bg 불투명
-    surfaceMuted: "rgba(110,118,129,0.3)", // 코드·칩 배경
+    surfaceMuted: "rgba(110,118,129,0.18)", // 코드·칩 배경 (블로그는 0.3, 흐린 글자 대비 4.5 이상 위해 0.18)
     foreground: "#E6EDF3", // --text-primary
     muted: "#8B949E", // --text-secondary
     border: "rgba(48,54,61,0.5)", // --card-border

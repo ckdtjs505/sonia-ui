@@ -8,8 +8,8 @@ colors:
   foreground: "#1F1B17"
   muted: "#6E655C"
   border: "rgba(31,27,23,0.09)"
-  primary: "#C9461A"
-  primary-soft: "rgba(201,70,26,0.10)"
+  primary: "#B74018"
+  primary-soft: "rgba(183,64,24,0.10)"
   on-primary: "#FFFFFF"
   flame: "#F0521F"
 typography:
@@ -261,5 +261,6 @@ components:
 - **Don't** hex·rgba·px 값을 화면 코드에 직접 쓰지 않는다.
 - **Don't** 다크 모드를 따로 만들거나 `dark:`·테마별 예외 스타일을 두지 않는다.
 - **Don't** 카드·버튼에 평소 그림자를 주지 않는다.
-- **Don't** 불씨색(flame)을 일반 버튼·링크 강조에 쓰지 않는다.
+- **Don't** 불씨색(flame)을 일반 버튼·링크 강조에 쓰지 않는다. 글자색으로도 쓰지 않는다(밝은 테마에서 대비 3.2~3.5). 점·아이콘 같은 그래픽에만 쓴다.
+- **Don't** 테마 색을 바꿀 때 primary 글자/바탕, primary/옅은 강조, 흐린 글자/움푹한 면 대비를 4.5 아래로 떨어뜨리지 않는다.
 - **Don't** 쓰는 프로젝트에서 `sn-*` 클래스를 덮어써 모양을 바꾸지 않는다.
