@@ -150,3 +150,16 @@
   --color-on-primary: #2A1A00;
   --color-flame: #FFB020;
 }
+
+[data-theme="sonia"] {
+  --color-background: #0D1117;
+  --color-surface: #161B22;
+  --color-surface-muted: rgba(110,118,129,0.3);
+  --color-foreground: #E6EDF3;
+  --color-muted: #8B949E;
+  --color-border: rgba(48,54,61,0.5);
+  --color-primary: #58A6FF;
+  --color-primary-soft: rgba(88,166,255,0.1);
+  --color-on-primary: #0D1117;
+  --color-flame: #E3B341;
+}

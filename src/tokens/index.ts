@@ -7,11 +7,12 @@ import sunset from "./sunset";
 import sepia from "./sepia";
 import ember from "./ember";
 import gold from "./gold";
+import sonia from "./sonia";
 
 export type Theme = typeof light;
 export type { Palette };
 
-export type ThemeId = "light" | "dark" | "nature" | "ocean" | "sunset" | "sepia" | "ember" | "gold";
+export type ThemeId = "light" | "dark" | "nature" | "ocean" | "sunset" | "sepia" | "ember" | "gold" | "sonia";
 
 export type ThemeMeta = {
   id: ThemeId;
@@ -28,6 +29,7 @@ export const themeList: ThemeMeta[] = [
   { id: "sepia", name: "세피아", theme: sepia },
   { id: "ember", name: "잉걸불", theme: ember },
   { id: "gold", name: "황금 불꽃", theme: gold },
+  { id: "sonia", name: "블로그", theme: sonia },
 ];
 
 export const getTheme = (themeId: ThemeId): Theme =>
@@ -43,4 +45,4 @@ export const toCssVars = (theme: Theme): Record<string, string> => ({
   ...Object.fromEntries(Object.entries(theme.borderRadii).map(([k, v]) => [`--radius-${k}`, `${v}px`])),
 });
 
-export { light, dark, nature, ocean, sunset, sepia, ember, gold, makeColors };
+export { light, dark, nature, ocean, sunset, sepia, ember, gold, sonia, makeColors };

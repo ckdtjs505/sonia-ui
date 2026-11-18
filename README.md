@@ -46,7 +46,7 @@ import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
 | 간격 | `p-lg` `gap-md` (`xs s md lg xl xxl hg`) | `padding="lg"` |
 | 모서리 | `rounded-md` (`xs sm md lg xl pill`) | `borderRadius="md"` |
 | 글자 | `text-title` (`display title heading body stat label caption overline micro`) | `variant="title"` |
-| 테마 | `data-theme="dark"` (`light dark nature ocean sunset sepia ember gold`) | `getTheme("dark")` |
+| 테마 | `data-theme="dark"` (`light dark nature ocean sunset sepia ember gold sonia`) | `getTheme("dark")` |
 
 ## 값 고치기
 

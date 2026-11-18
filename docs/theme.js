@@ -1,6 +1,6 @@
 // 자동 생성 파일 — scripts/build-docs.ts. 직접 고치지 말 것.
 (() => {
-  const themes = [["light","라이트"],["dark","다크"],["nature","숲"],["ocean","바다"],["sunset","노을"],["sepia","세피아"],["ember","잉걸불"],["gold","황금 불꽃"]];
+  const themes = [["light","라이트"],["dark","다크"],["nature","숲"],["ocean","바다"],["sunset","노을"],["sepia","세피아"],["ember","잉걸불"],["gold","황금 불꽃"],["sonia","블로그"]];
   const root = document.documentElement;
   const on = "rounded-pill bg-primary px-md py-xs text-label text-on-primary";
   const off = "rounded-pill border border-border px-md py-xs text-label text-muted hover:text-foreground";
