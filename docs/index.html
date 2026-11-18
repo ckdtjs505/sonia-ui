@@ -167,7 +167,7 @@
       <dl id="spacing" class="grid scroll-mt-24 gap-lg md:grid-cols-3">
         <div><dt class="text-heading">간격</dt><dd class="mt-xs text-caption text-muted"><code class="text-foreground">xs s md lg xl xxl hg</code> · 4~128px · <a href="docs/padding.html" class="text-primary underline underline-offset-2">보기</a></dd></div>
         <div><dt class="text-heading">모서리</dt><dd class="mt-xs text-caption text-muted"><code class="text-foreground">xs sm md lg xl pill</code> · 6~999px · <a href="docs/border-radius.html" class="text-primary underline underline-offset-2">보기</a></dd></div>
-        <div id="type" class="scroll-mt-24"><dt class="text-heading">글자</dt><dd class="mt-xs text-caption text-muted"><code class="text-foreground">hero display title heading body …</code> · 크기·굵기·자간을 한 번에 · <a href="docs/font-size.html" class="text-primary underline underline-offset-2">보기</a></dd></div>
+        <div id="type" class="scroll-mt-24"><dt class="text-heading">글자</dt><dd class="mt-xs text-caption text-muted"><code class="text-foreground">hero display title …</code> · 10단계 · <a href="docs/font-size.html" class="text-primary underline underline-offset-2">보기</a></dd></div>
       </dl>
     </section>
 
@@ -175,7 +175,7 @@
     <section id="native" class="scroll-mt-24">
       <h2 class="text-title">앱에서는 Box · Text</h2>
       <p class="mt-s text-body text-muted">같은 값을 Restyle 컴포넌트로 쓴다. 이름이 웹과 1:1로 맞는다 (<code class="text-foreground">p-lg</code> ↔ <code class="text-foreground">padding="lg"</code>).</p>
-      <pre class="mt-lg overflow-x-auto rounded-lg border border-border bg-surface p-lg text-caption leading-relaxed text-foreground"><span class="text-muted">// npm i github:ckdtjs505/sonia-ui @shopify/restyle react-native-safe-area-context</span>
+      <pre id="native-code" class="mt-lg overflow-x-auto rounded-lg border border-border bg-surface p-lg text-caption leading-relaxed text-foreground"><span class="text-muted">// npm i github:ckdtjs505/sonia-ui @shopify/restyle react-native-safe-area-context</span>
 import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
 
 &lt;ThemeProvider theme={getTheme("dark")}&gt;
@@ -183,6 +183,10 @@ import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
     &lt;Text variant="title"&gt;안녕&lt;/Text&gt;
   &lt;/Box&gt;
 &lt;/ThemeProvider&gt;</pre>
+      <div class="mt-md flex flex-wrap gap-s">
+        <button type="button" data-copy-from="#native-code" class="sn-btn sn-btn-soft"><span class="copy-label">복사</span></button>
+        <a href="docs/expo.html" class="sn-btn sn-btn-ghost">Expo 설정 전체</a>
+      </div>
     </section>
   </main>
 
