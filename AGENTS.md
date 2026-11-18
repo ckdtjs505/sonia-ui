@@ -29,4 +29,4 @@
 
 배포: main에 푸시하면 GitHub Pages(`/docs`)가 갱신된다. `src/`나 `package.json`이 바뀐 푸시는 `.github/workflows/tag.yml`이 패치 태그(`v1.1.0` → `v1.1.1`)를 자동으로 올리고 jsDelivr `@1` 캐시를 비운다. **태그를 손으로 올리지 않는다.** 마이너·메이저를 올릴 때만 `package.json`의 `version`을 바꾼다(예: `1.2.0` → 다음 태그 `v1.2.0`). 쓰는 프로젝트는 `npm i github:ckdtjs505/sonia-ui`로 최신을 받는다.
 
-쓰는 곳: self-fire(Expo, `native`), 블로그 ckdtjs505.github.io(`themes.css`), planner(`base.css`, build.mjs가 인라인), 이 문서 사이트(`tailwind.css`).
+쓰는 곳: self-fire(Expo, `native`), 블로그 ckdtjs505.github.io(`themes.css`), planner(`base.css`, build.mjs가 인라인), ai-tutor(Next, `base.css` + CDN `theme.js`), csfreecaTV·Momentum(CDN), 이 문서 사이트(`tailwind.css`).
