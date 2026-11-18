@@ -26,6 +26,9 @@
   --radius-lg: 24px;
   --radius-xl: 32px;
   --radius-pill: 999px;
+  --text-hero: 48px;
+  --text-hero--font-weight: 900;
+  --text-hero--letter-spacing: -1.4px;
   --text-display: 34px;
   --text-display--font-weight: 900;
   --text-display--letter-spacing: -0.8px;

@@ -6,7 +6,7 @@
 ## 1. AI가 지킬 규칙
 
 1. **색은 역할 이름으로만.** `#58A6FF`, `rgba(...)`, `text-blue-500` 같은 값을 쓰지 않는다. `bg-primary` / `var(--color-primary)`처럼 역할로 쓴다. 투명도가 필요하면 `color-mix(in srgb, var(--color-primary) 20%, transparent)` 또는 Tailwind `bg-primary/20`.
-2. **간격·모서리·글자는 이름 단계로만.** 간격 `0 xs s md lg xl xxl hg`, 모서리 `xs sm md lg xl pill`, 글자 `display title heading body caption label stat micro overline`.
+2. **간격·모서리·글자는 이름 단계로만.** 간격 `0 xs s md lg xl xxl hg`, 모서리 `xs sm md lg xl pill`, 글자 `hero display title heading body caption label stat micro overline`.
 3. **버튼·카드·태그·입력창은 `sn-*` 클래스를 먼저 쓴다.** 새로 만들지 말고 조합한다.
 4. **테마는 `<html data-theme="…">` 하나.** 다크 모드를 따로 만들지 않는다(`dark:` 변형, `prefers-color-scheme` 분기 금지). 모든 색이 테마를 따라가므로 저절로 된다.
 5. **값을 바꾸고 싶으면 프로젝트에서 덮지 말고 sonia-ui의 `src/tokens`·`src/styles`를 고친다.** 그래야 모든 앱이 같이 바뀐다.
@@ -144,6 +144,7 @@ CSS 변수 이름: `--color-background`, `--color-surface`, `--color-surface-mut
 - 간격 `--spacing-*`: 0=0px, xs=4px, s=8px, md=12px, lg=16px, xl=24px, xxl=48px, hg=128px
 - 모서리 `--radius-*`: xs=6px, sm=10px, md=16px, lg=24px, xl=32px, pill=999px
 - 글자 `--text-*` (크기 / 굵기 / 자간):
+  - hero: 48px / 900 / -1.4px
   - display: 34px / 900 / -0.8px
   - title: 26px / 800 / -0.6px
   - heading: 19px / 700 / -0.3px

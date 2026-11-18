@@ -79,12 +79,19 @@ const theme = {
     xl: 32,
     pill: 999,
   },
-  // 글자 크기 단계: display 34 · title 26 · heading 19 · stat 15 · body 15 · label 13 · caption 13 · overline 12 · micro 11
+  // 글자 크기 단계: hero 48 · display 34 · title 26 · heading 19 · stat 15 · body 15 · label 13 · caption 13 · overline 12 · micro 11
   // 새 화면은 fontSize를 직접 쓰지 말고 이 variant를 쓴다.
   textVariants: {
     defaults: {
       color: "$foreground",
       fontSize: 16,
+    },
+    // 랜딩·첫 화면의 큰 제목 (화면당 하나)
+    hero: {
+      color: "$foreground",
+      fontSize: 48,
+      fontWeight: "900" as const,
+      letterSpacing: -1.4,
     },
     // 큰 숫자 (나의 모닥불 일수 등)
     display: {

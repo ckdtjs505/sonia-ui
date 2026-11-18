@@ -13,8 +13,12 @@ colors:
   on-primary: "#FFFFFF"
   flame: "#F0521F"
 typography:
-  display:
+  hero:
     fontFamily: "Pretendard Variable, Pretendard, -apple-system, system-ui, Apple SD Gothic Neo, Noto Sans KR, sans-serif"
+    fontSize: "48px"
+    fontWeight: 900
+    letterSpacing: "-1.4px"
+  display:
     fontSize: "34px"
     fontWeight: 900
     letterSpacing: "-0.8px"
@@ -183,6 +187,7 @@ components:
 **Character:** 한 가지 글꼴로 굵기 차이만으로 위계를 만든다. 제목일수록 굵고(800~900) 자간이 좁아지며, 한국어 화면에서 촘촘하고 단단하게 읽힌다.
 
 ### Hierarchy
+- **Hero** (900, 48px, 자간 -1.4px): 랜딩·첫 화면의 큰 제목. 화면당 하나.
 - **Display** (900, 34px, 자간 -0.8px): 큰 숫자 하나. 모닥불 일수처럼 화면의 주인공이 되는 값.
 - **Title** (800, 26px, 자간 -0.6px): 화면 제목.
 - **Heading** (700, 19px, 자간 -0.3px): 시트·섹션 제목.

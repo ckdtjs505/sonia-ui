@@ -16,7 +16,7 @@
   <header class="sticky top-0 z-10 border-b border-border bg-background/80 backdrop-blur">
     <nav class="mx-auto flex max-w-6xl items-center gap-lg px-lg py-md">
       <a href="#" class="flex items-center gap-s text-heading">
-        <span class="inline-block size-6 rounded-sm bg-flame"></span>sonia-ui
+        <span class="inline-block size-6 rounded-sm bg-primary"></span>sonia-ui
       </a>
       <div class="ml-auto hidden gap-lg text-label text-muted md:flex">
         <a href="docs/installation.html" class="hover:text-foreground">문서</a>
@@ -26,17 +26,17 @@
         <a href="#type" class="hover:text-foreground">글자</a>
         <a href="#native" class="hover:text-foreground">앱</a>
       </div>
-      <a href="https://github.com/ckdtjs505/sonia-ui" class="ml-auto rounded-pill border border-border px-md py-xs text-label md:ml-0">GitHub</a>
+      <a href="https://github.com/ckdtjs505/sonia-ui" class="sn-btn sn-btn-outline sn-btn-sm sn-btn-pill ml-auto md:ml-0">GitHub</a>
       <select data-theme-select aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"></select>
     </nav>
   </header>
 
   <!-- 히어로 -->
   <section class="relative overflow-hidden border-b border-border">
-    <div class="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(var(--color-border)_1px,transparent_1px),linear-gradient(90deg,var(--color-border)_1px,transparent_1px)] [background-size:48px_48px]"></div>
+    <div class="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(var(--color-border)_1px,transparent_1px),linear-gradient(90deg,var(--color-border)_1px,transparent_1px)] [background-size:var(--spacing-xxl)_var(--spacing-xxl)]"></div>
     <div class="relative mx-auto grid max-w-6xl gap-xxl px-lg py-hg md:grid-cols-2">
       <div>
-        <h1 class="text-5xl font-black tracking-tight md:text-6xl">내 모든 앱을<br />같은 결로.</h1>
+        <h1 class="text-hero leading-tight">내 모든 앱을<br />같은 결로.</h1>
         <p class="mt-lg text-body text-muted">색·간격·글자 크기를 한 곳에서 정하고, 웹은 Tailwind 클래스로, 앱은 Box·Text로 똑같이 쓴다. 테마는 <code class="text-foreground">data-theme</code> 하나로 바뀐다.</p>
         <div class="mt-xl rounded-md border border-border bg-surface p-lg">
           <p class="text-label">AI에게 이 한 줄이면 된다</p>
@@ -49,10 +49,10 @@
       </div>
 
       <!-- 미리보기 카드 -->
-      <div class="rounded-xl border border-border bg-surface p-xl shadow-2xl">
+      <div class="rounded-xl border border-border bg-surface p-xl">
         <div class="flex items-center justify-between">
           <p class="text-overline uppercase">오늘의 불씨</p>
-          <span class="rounded-pill bg-primary-soft px-md py-xs text-label text-primary">🔥 12일</span>
+          <span class="sn-tag">이번 주 5/7</span>
         </div>
         <p class="mt-lg text-display">42</p>
         <p class="text-caption">연속으로 지킨 날</p>
@@ -61,8 +61,8 @@
           <p class="mt-s text-micro">— 오늘의 명언</p>
         </div>
         <div class="mt-lg flex gap-s">
-          <button class="flex-1 rounded-md bg-primary py-md text-label text-on-primary">불 지피기</button>
-          <button class="flex-1 rounded-md border border-border py-md text-label">나중에</button>
+          <button type="button" class="sn-btn sn-btn-primary sn-btn-lg flex-1">불 지피기</button>
+          <button type="button" class="sn-btn sn-btn-outline sn-btn-lg flex-1">나중에</button>
         </div>
         <p class="mt-xl text-overline">테마 바꿔 보기</p>
         <div data-theme-buttons class="mt-s flex flex-wrap gap-s"></div>
@@ -191,6 +191,7 @@
       <h2 class="text-title">크기·굵기·자간을 한 번에</h2>
       <p class="mt-s text-body text-muted"><code class="text-foreground">text-title</code> 하나가 26px · 800 · -0.6px을 같이 건다. 앱의 <code class="text-foreground">&lt;Text variant="title"&gt;</code>과 같은 값.</p>
       <div class="mt-lg divide-y divide-border rounded-lg border border-border bg-surface">
+        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-hero</code><span class="text-hero">같은 결로</span></div>
         <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-display</code><span class="text-display">42</span></div>
         <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-title</code><span class="text-title">화면 제목</span></div>
         <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-heading</code><span class="text-heading">시트 · 섹션 제목</span></div>
