@@ -348,7 +348,7 @@ const themeScript = `// 자동 생성 파일 — scripts/build-docs.ts. 직접 �
   };
   apply(saved || root.dataset.theme);
 
-  const btnOn = "sn-btn sn-btn-primary sn-btn-sm sn-btn-pill";
+  const btnOn = "sn-btn sn-btn-soft sn-btn-sm sn-btn-pill"; // 선택 상태는 soft: 화면의 primary는 주요 행동 하나에만
   const btnOff = "sn-btn sn-btn-outline sn-btn-sm sn-btn-pill";
   const sync = () => {
     for (const sel of document.querySelectorAll("[data-theme-select]")) sel.value = root.dataset.theme;

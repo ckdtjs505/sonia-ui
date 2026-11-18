@@ -17,7 +17,7 @@ web
 창선의 모든 앱·웹이 함께 쓰는 디자인 시스템이다. 색·간격·모서리·글자 값과 `sn-*` 컴포넌트, 여러 테마를 한 곳에서 정의하고, 웹(CSS·Tailwind v4·순수 JS)과 Expo(Restyle) 양쪽에 같은 값을 내보낸다.
 
 성공 기준(모두 해당):
-- 모든 앱이 한 모습: self-fire·블로그·planner·문서 사이트가 같은 테마·컴포넌트로 통일되어 보인다.
+- 모든 앱이 한 모습: self-fire·블로그·planner·ai-tutor 등 모든 사용처가 같은 테마·컴포넌트로 통일되어 보인다.
 - AI가 한 번에 맞게 쓴다: `llms-full.txt`만 읽고 hex·px 없이 규칙대로 화면을 만든다.
 - 값은 여기서만 고친다: 쓰는 프로젝트가 덮어쓰지 않고, 바꿀 일은 이 저장소에서 고친다.
 - 테마를 고르는 재미: 앱 이용자가 숲·바다·노을 같은 테마를 골라 쓰는 경험 자체가 가치다.
@@ -28,7 +28,7 @@ web
 
 ## Operating Context
 
-- 쓰는 곳: self-fire(Expo, `sonia-ui/native`), 블로그 ckdtjs505.github.io(`themes.css`), planner(`base.css`를 build.mjs가 인라인), 이 문서 사이트(`tailwind.css`).
+- 쓰는 곳: self-fire(Expo, `sonia-ui/native`), 블로그 ckdtjs505.github.io(`themes.css`), planner(`base.css`를 build.mjs가 인라인), ai-tutor(Next, `base.css` + CDN `theme.js`), csfreecaTV·Momentum(CDN), 이 문서 사이트(`tailwind.css`).
 - 설치: `npm i github:ckdtjs505/sonia-ui`, 또는 jsDelivr CDN `@1` 두 줄(`base.css` + `theme.js`).
 - 배포: main 푸시 → GitHub Pages(`/docs`) 갱신, `src/`·`package.json` 변경 시 패치 태그 자동 + jsDelivr 캐시 비움.
 - AI 연결: Claude Code 스킬(`skill/`)을 링크해 "sonia-ui로 만들어줘"로 쓴다.
@@ -51,7 +51,7 @@ web
 
 - 문서 사이트와 랜딩: `docs/index.html`, `docs/docs/*`.
 - 화면 캡처 7장: `docs/readme/*.jpg` (랜딩 두 테마·블로그·AI·테마·팔레트·컴포넌트).
-- 실제 사용처 4곳(위 Operating Context). 외부 사용자 수·후기·추천사는 없으므로 만들어 넣지 않는다.
+- 실제 사용처 7곳(위 Operating Context). 외부 사용자 수·후기·추천사는 없으므로 만들어 넣지 않는다.
 
 ## Product Principles
 
