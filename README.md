@@ -22,6 +22,16 @@ npm i github:ckdtjs505/sonia-ui
 </div>
 ```
 
+## Tailwind 없는 웹
+
+```js
+import "sonia-ui/themes.css"; // --color-primary, --spacing-lg ... 와 data-theme별 값
+```
+
+```css
+.card { background: var(--color-surface); padding: var(--spacing-lg); }
+```
+
 ## 앱 (Expo)
 
 ```sh

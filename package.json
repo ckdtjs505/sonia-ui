@@ -19,7 +19,8 @@
   "exports": {
     "./tokens": "./src/tokens/index.ts",
     "./native": "./src/native/index.ts",
-    "./tailwind.css": "./src/tailwind/theme.css"
+    "./tailwind.css": "./src/tailwind/theme.css",
+    "./themes.css": "./src/css/themes.css"
   },
   "peerDependenciesMeta": {
     "@shopify/restyle": {

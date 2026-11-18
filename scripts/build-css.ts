@@ -1,5 +1,5 @@
 // tokens → Tailwind v4 테마 CSS. 값은 tokens 한 곳에서만 고치고 `npm run build`로 다시 만든다.
-import { writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { themeList, light, Theme } from "../src/tokens/index.ts";
 
 const kebab = (s: string) => s.replace(/[A-Z]/g, (c) => `-${c.toLowerCase()}`);
@@ -40,3 +40,18 @@ ${themeList
 
 writeFileSync(new URL("../src/tailwind/theme.css", import.meta.url), css);
 console.log(`theme.css: ${themeBlock.length} tokens, ${themeList.length} themes`);
+
+// Tailwind 없이 쓰는 순수 CSS 변수. 기본은 라이트, data-theme로 바꾼다.
+// barStyle "light"(밝은 상태바 글자)인 테마가 어두운 테마다.
+const scheme = (t: Theme) => `color-scheme: ${(t as { barStyle: string }).barStyle === "light" ? "dark" : "light"};`;
+const plain = `/* 자동 생성 파일 — scripts/build-css.ts. 직접 고치지 말 것. */
+:root {
+${indent([...colorVars(light), scheme(light),
+  ...Object.entries(light.spacing).map(([k, v]) => `--spacing-${k}: ${px(v)};`),
+  ...Object.entries(light.borderRadii).map(([k, v]) => `--radius-${k}: ${px(v)};`)])}
+}
+
+${themeList.map(({ id, theme }) => `[data-theme="${id}"] {\n${indent([...colorVars(theme), scheme(theme)])}\n}`).join("\n\n")}
+`;
+mkdirSync(new URL("../src/css/", import.meta.url), { recursive: true });
+writeFileSync(new URL("../src/css/themes.css", import.meta.url), plain);
