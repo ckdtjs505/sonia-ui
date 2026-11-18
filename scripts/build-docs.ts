@@ -72,6 +72,8 @@ const pages: Page[] = [
         `<div class="w-64 rounded-md bg-surface p-lg"><p class="text-title">안녕</p><p class="mt-xs text-caption text-muted">sonia-ui로 만든 카드</p><button class="mt-lg rounded-pill bg-primary px-lg py-s text-label text-on-primary">시작</button></div>`,
         `<div class="rounded-md bg-surface p-lg">\n  <p class="text-title">안녕</p>\n  <p class="mt-xs text-caption text-muted">sonia-ui로 만든 카드</p>\n  <button class="mt-lg rounded-pill bg-primary px-lg py-s text-label text-on-primary">시작</button>\n</div>`) },
       { id: "frameworks", title: "프레임워크별", body: p(`<b class="text-foreground">Vite</b>: ${c("@tailwindcss/vite")} 플러그인만 켜면 된다. <b class="text-foreground">Next.js</b>: ${c("next.config")}에 ${c('transpilePackages: ["sonia-ui"]')}를 넣는다.`) },
+      { id: "font", title: "글꼴", body: p(`기본 글꼴은 Pretendard다. ${c("<head>")}에 한 줄 넣으면 되고, 없으면 시스템 글꼴로 보인다.`) + code(`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />`, "index.html") },
+      { id: "plain-css", title: "Tailwind 없이", body: p(`순수 HTML·CSS 프로젝트는 ${c("sonia-ui/base.css")} 하나만 가져온다. 색 변수, 기본 모양, ${c("sn-")} 컴포넌트, 글자 클래스(${c("sn-text-title")})가 다 들어 있다. 모두 ${c("@layer sonia")} 안에 있어서 프로젝트가 직접 쓴 CSS가 항상 이긴다.`) + code(`import "sonia-ui/base.css";\n\n/* 또는 */\n<link rel="stylesheet" href="node_modules/sonia-ui/src/css/base.css" />`) + p(`변수만 필요하면 ${c("sonia-ui/themes.css")}.`) },
     ],
   },
   {
@@ -109,6 +111,31 @@ const pages: Page[] = [
       { id: "edit", title: "1. tokens 고치기", body: code(`// src/tokens/light.ts\nspacing: { xs: 4, s: 8, md: 12, lg: 16, ... }`, "src/tokens/light.ts") },
       { id: "build", title: "2. 빌드", body: code("npm run build", "Terminal") + p(`${c("src/tailwind/theme.css")}와 ${c("docs/")}가 다시 만들어진다. 커밋·푸시하면 앱들은 ${c("npm i github:ckdtjs505/sonia-ui")}로 최신을 받는다.`) },
       { id: "new-theme", title: "새 테마 추가", body: code(`// src/tokens/forest.ts\nimport light, { makeColors } from "./light";\n\nexport default { ...light, colors: makeColors({ background: "#0E1A12", ... }), barStyle: "light" };`) + p(`그다음 ${c("src/tokens/index.ts")}의 ${c("themeList")}와 ${c("ThemeId")}에 추가한다.`) },
+    ],
+  },
+  {
+    slug: "components", group: "컴포넌트", title: "버튼 · 카드 · 태그",
+    lead: "모든 프로젝트가 같은 모양을 쓰도록 만든 클래스. 기존 .btn 등과 겹치지 않게 sn- 을 붙였다. Tailwind와 순수 CSS 둘 다 같은 이름.",
+    table: [
+      ["sn-btn", "버튼 기본 (모양 클래스와 함께)"], ["sn-btn-primary", "주요 동작"], ["sn-btn-soft", "보조 동작"],
+      ["sn-btn-outline", "취소 · 덜 중요한 동작"], ["sn-btn-ghost", "툴바 · 아이콘 옆"], ["sn-btn-sm / sn-btn-lg", "크기"],
+      ["sn-btn-pill", "알약 모양"], ["sn-card", "떠 있는 면"], ["sn-card-muted", "들어간 면"],
+      ["sn-tag", "태그 · 칩"], ["sn-tag-muted", "회색 태그"], ["sn-input", "입력창"],
+    ],
+    sections: [
+      { id: "buttons", title: "버튼", body: example(
+        `<button class="sn-btn sn-btn-primary">저장</button><button class="sn-btn sn-btn-soft">임시 저장</button><button class="sn-btn sn-btn-outline">취소</button><button class="sn-btn sn-btn-ghost">더 보기</button><button class="sn-btn sn-btn-primary" disabled>비활성</button>`,
+        `<button class="sn-btn sn-btn-primary">저장</button>\n<button class="sn-btn sn-btn-soft">임시 저장</button>\n<button class="sn-btn sn-btn-outline">취소</button>\n<button class="sn-btn sn-btn-ghost">더 보기</button>\n<button class="sn-btn sn-btn-primary" disabled>비활성</button>`) },
+      { id: "sizes", title: "크기 · 모양", body: example(
+        `<button class="sn-btn sn-btn-primary sn-btn-sm">작게</button><button class="sn-btn sn-btn-primary">보통</button><button class="sn-btn sn-btn-primary sn-btn-lg">크게</button><button class="sn-btn sn-btn-primary sn-btn-pill">알약</button>`,
+        `<button class="sn-btn sn-btn-primary sn-btn-sm">작게</button>\n<button class="sn-btn sn-btn-primary">보통</button>\n<button class="sn-btn sn-btn-primary sn-btn-lg">크게</button>\n<button class="sn-btn sn-btn-primary sn-btn-pill">알약</button>`) },
+      { id: "cards", title: "카드", body: example(
+        `<div class="flex flex-wrap gap-lg rounded-lg bg-background p-lg"><div class="sn-card w-64"><p class="text-heading">오늘의 불씨</p><p class="mt-xs text-caption text-muted">12일째 이어지는 중</p><div class="mt-md flex gap-s"><span class="sn-tag">습관</span><span class="sn-tag sn-tag-muted">아침</span></div></div><div class="sn-card sn-card-muted w-64"><p class="text-heading">들어간 면</p><p class="mt-xs text-caption text-muted">입력 영역 · 인용 · 요약</p></div></div>`,
+        `<div class="sn-card">\n  <p class="text-heading">오늘의 불씨</p>\n  <p class="text-caption text-muted">12일째 이어지는 중</p>\n  <span class="sn-tag">습관</span>\n  <span class="sn-tag sn-tag-muted">아침</span>\n</div>\n<div class="sn-card sn-card-muted">...</div>`) },
+      { id: "inputs", title: "입력창", body: example(
+        `<div class="w-72 space-y-s"><input class="sn-input" placeholder="오늘 할 일" /><div class="flex gap-s"><input class="sn-input" placeholder="이메일" /><button class="sn-btn sn-btn-primary">구독</button></div></div>`,
+        `<input class="sn-input" placeholder="오늘 할 일" />`) },
+      { id: "plain", title: "Tailwind 없이", body: p(`${c("sonia-ui/base.css")}를 가져오면 같은 클래스를 쓴다. 글자는 ${c("text-title")} 대신 ${c("sn-text-title")}.`) + code(`<div class="sn-card">\n  <h2 class="sn-text-heading">제목</h2>\n  <button class="sn-btn sn-btn-primary">저장</button>\n</div>`) },
     ],
   },
   {

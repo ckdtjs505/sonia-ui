@@ -10,6 +10,8 @@
   --color-primary-soft: rgba(201,70,26,0.10);
   --color-on-primary: #FFFFFF;
   --color-flame: #F0521F;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --spacing-0: 0px;
   --spacing-xs: 4px;
   --spacing-s: 8px;
@@ -162,4 +164,128 @@
   --color-primary-soft: rgba(88,166,255,0.1);
   --color-on-primary: #0D1117;
   --color-flame: #E3B341;
+}
+
+@layer base {
+  /* 요소 기본 모양. 값은 모두 sonia-ui 변수에서 온다.
+     빌드하면 순수 CSS(base.css)에는 @layer sonia 안에, Tailwind(tailwind.css)에는 @layer base 안에 들어간다.
+     레이어 안에 있으므로 프로젝트가 직접 쓴 CSS가 항상 이긴다. */
+
+  body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  code, kbd, pre, samp {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+@layer components {
+  /* 컴포넌트 클래스. 기존 프로젝트의 .btn·.tag와 겹치지 않게 sn- 을 붙인다.
+     빌드하면 순수 CSS에는 @layer sonia 안에, Tailwind에는 @layer components 안에 들어간다. */
+
+  /* 버튼: sn-btn + 모양 하나 (sn-btn-primary · sn-btn-soft · sn-btn-outline · sn-btn-ghost) */
+  .sn-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-s);
+    padding: var(--spacing-s) var(--spacing-lg);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font: inherit;
+    font-size: var(--text-label);
+    font-weight: var(--text-label--font-weight);
+    line-height: 1.4;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .sn-btn:disabled,
+  .sn-btn[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .sn-btn-sm { padding: var(--spacing-xs) var(--spacing-md); }
+  .sn-btn-lg { padding: var(--spacing-md) var(--spacing-xl); font-size: var(--text-body); }
+  .sn-btn-pill { border-radius: var(--radius-pill); }
+
+  .sn-btn-primary { background: var(--color-primary); color: var(--color-on-primary); }
+  .sn-btn-primary:hover { background: color-mix(in srgb, var(--color-primary) 88%, var(--color-foreground)); }
+
+  .sn-btn-soft { background: var(--color-primary-soft); color: var(--color-primary); }
+  .sn-btn-soft:hover { background: color-mix(in srgb, var(--color-primary) 20%, transparent); }
+
+  .sn-btn-outline { border-color: var(--color-border); background: transparent; color: var(--color-foreground); }
+  .sn-btn-outline:hover { background: var(--color-surface-muted); }
+
+  .sn-btn-ghost { background: transparent; color: var(--color-muted); }
+  .sn-btn-ghost:hover { background: var(--color-surface-muted); color: var(--color-foreground); }
+
+  /* 카드: 바탕 위에 떠 있는 면 */
+  .sn-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+  }
+  .sn-card-muted {
+    background: var(--color-surface-muted);
+    border-color: transparent;
+  }
+
+  /* 태그·칩 */
+  .sn-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 2px var(--spacing-md);
+    border-radius: var(--radius-pill);
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-size: var(--text-label);
+    font-weight: var(--text-label--font-weight);
+    line-height: 1.6;
+    text-decoration: none;
+  }
+  .sn-tag-muted {
+    background: var(--color-surface-muted);
+    color: var(--color-muted);
+  }
+
+  /* 입력창 */
+  .sn-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--spacing-s) var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-muted);
+    color: var(--color-foreground);
+    font: inherit;
+    font-size: var(--text-body);
+  }
+  .sn-input::placeholder { color: var(--color-muted); }
+  .sn-input:focus { outline: 2px solid var(--color-primary); outline-offset: -1px; }
 }

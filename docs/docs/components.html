@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>버튼 · 카드 · 태그 - 컴포넌트 - sonia-ui</title>
+  <meta name="description" content="모든 프로젝트가 같은 모양을 쓰도록 만든 클래스. 기존 .btn 등과 겹치지 않게 sn- 을 붙였다. Tailwind와 순수 CSS 둘 다 같은 이름." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script>try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch{}</script>
+</head>
+<body>
+  <header class="sticky top-0 z-30 border-b border-border bg-background/90 backdrop-blur">
+    <div class="flex h-14 items-center gap-md px-lg">
+      <a href="../index.html" class="flex items-center gap-s text-heading text-foreground"><span class="inline-block size-5 rounded-xs bg-flame"></span>sonia-ui</a>
+      <span class="rounded-pill bg-surface-muted px-s py-[2px] text-micro">v1.0</span>
+      <div class="ml-auto flex items-center gap-lg text-label">
+        <a href="installation.html" class="text-foreground">Docs</a>
+        <a href="https://github.com/ckdtjs505/sonia-ui" class="text-muted hover:text-foreground">GitHub</a>
+        <select data-theme-select aria-label="테마" class="rounded-pill border border-border bg-surface px-md py-xs text-micro text-foreground"></select>
+      </div>
+    </div>
+    <div class="flex items-center gap-s border-t border-border px-lg py-s text-caption lg:hidden">
+      <button id="menu" aria-label="메뉴" class="text-foreground">☰</button><span>컴포넌트</span><span>›</span><span class="text-foreground">버튼 · 카드 · 태그</span>
+    </div>
+  </header>
+
+  <div class="mx-auto flex max-w-[1440px]">
+    <nav id="sidebar" class="fixed inset-y-0 left-0 top-14 z-20 hidden w-72 overflow-y-auto border-r border-border bg-background px-xl py-xl lg:sticky lg:block lg:h-[calc(100vh-3.5rem)]">
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">시작하기</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="installation.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">설치</a></li>
+    <li><a href="expo.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">앱 (Expo)</a></li>
+    <li><a href="themes.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">테마</a></li>
+    <li><a href="customizing.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">값 고치기</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">컴포넌트</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="components.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-primary font-semibold text-primary">버튼 · 카드 · 태그</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">색</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="colors.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">색</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">간격</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="padding.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">padding</a></li>
+    <li><a href="margin.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">margin</a></li>
+    <li><a href="gap.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">gap</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">모서리</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="border-radius.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">border-radius</a></li>
+  </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">글자</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="font-size.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">font-size</a></li>
+  </ul></nav>
+
+    <main class="min-w-0 flex-1 px-lg py-xxl sm:px-xxl">
+      <div class="mx-auto max-w-3xl">
+        <p class="text-overline uppercase text-primary">컴포넌트</p>
+        <h1 class="mt-s text-3xl font-extrabold tracking-tight text-foreground">버튼 · 카드 · 태그</h1>
+        <p class="mt-md text-lg text-muted">모든 프로젝트가 같은 모양을 쓰도록 만든 클래스. 기존 .btn 등과 겹치지 않게 sn- 을 붙였다. Tailwind와 순수 CSS 둘 다 같은 이름.</p>
+        <section id="reference" class="scroll-mt-24">
+<div class="table-wrap relative mt-xl ">
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-caption">
+      <thead><tr class="border-b border-border"><th class="py-s pr-lg text-label">Class</th><th class="py-s text-label">Styles</th></tr></thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-btn</td><td class="py-s font-mono whitespace-pre text-muted">버튼 기본 (모양 클래스와 함께)</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-btn-primary</td><td class="py-s font-mono whitespace-pre text-muted">주요 동작</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-btn-soft</td><td class="py-s font-mono whitespace-pre text-muted">보조 동작</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-btn-outline</td><td class="py-s font-mono whitespace-pre text-muted">취소 · 덜 중요한 동작</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-btn-ghost</td><td class="py-s font-mono whitespace-pre text-muted">툴바 · 아이콘 옆</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-btn-sm / sn-btn-lg</td><td class="py-s font-mono whitespace-pre text-muted">크기</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-btn-pill</td><td class="py-s font-mono whitespace-pre text-muted">알약 모양</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-card</td><td class="py-s font-mono whitespace-pre text-muted">떠 있는 면</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-card-muted</td><td class="py-s font-mono whitespace-pre text-muted">들어간 면</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-tag</td><td class="py-s font-mono whitespace-pre text-muted">태그 · 칩</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-tag-muted</td><td class="py-s font-mono whitespace-pre text-muted">회색 태그</td></tr><tr><td class="py-s pr-lg font-mono whitespace-nowrap text-primary">sn-input</td><td class="py-s font-mono whitespace-pre text-muted">입력창</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div></section>
+        <p class="mt-xxl text-overline uppercase">예제</p>
+        <section id="buttons" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#buttons">버튼</a></h2>
+<div class="mt-lg overflow-hidden rounded-xl border border-border">
+  <div class="flex flex-wrap items-center justify-center gap-xl bg-surface-muted px-lg py-xl"><button class="sn-btn sn-btn-primary">저장</button><button class="sn-btn sn-btn-soft">임시 저장</button><button class="sn-btn sn-btn-outline">취소</button><button class="sn-btn sn-btn-ghost">더 보기</button><button class="sn-btn sn-btn-primary" disabled>비활성</button></div>
+  <div class="border-t border-border">
+<div class="overflow-hidden  bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-primary"</span>&gt;저장&lt;/<span class="text-primary">button</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-soft"</span>&gt;임시 저장&lt;/<span class="text-primary">button</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-outline"</span>&gt;취소&lt;/<span class="text-primary">button</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-ghost"</span>&gt;더 보기&lt;/<span class="text-primary">button</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-primary"</span> disabled&gt;비활성&lt;/<span class="text-primary">button</span>&gt;</code></pre>
+</div></div>
+</div></section><section id="sizes" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#sizes">크기 · 모양</a></h2>
+<div class="mt-lg overflow-hidden rounded-xl border border-border">
+  <div class="flex flex-wrap items-center justify-center gap-xl bg-surface-muted px-lg py-xl"><button class="sn-btn sn-btn-primary sn-btn-sm">작게</button><button class="sn-btn sn-btn-primary">보통</button><button class="sn-btn sn-btn-primary sn-btn-lg">크게</button><button class="sn-btn sn-btn-primary sn-btn-pill">알약</button></div>
+  <div class="border-t border-border">
+<div class="overflow-hidden  bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-primary sn-btn-sm"</span>&gt;작게&lt;/<span class="text-primary">button</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-primary"</span>&gt;보통&lt;/<span class="text-primary">button</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-primary sn-btn-lg"</span>&gt;크게&lt;/<span class="text-primary">button</span>&gt;
+&lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-primary sn-btn-pill"</span>&gt;알약&lt;/<span class="text-primary">button</span>&gt;</code></pre>
+</div></div>
+</div></section><section id="cards" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#cards">카드</a></h2>
+<div class="mt-lg overflow-hidden rounded-xl border border-border">
+  <div class="flex flex-wrap items-center justify-center gap-xl bg-surface-muted px-lg py-xl"><div class="flex flex-wrap gap-lg rounded-lg bg-background p-lg"><div class="sn-card w-64"><p class="text-heading">오늘의 불씨</p><p class="mt-xs text-caption text-muted">12일째 이어지는 중</p><div class="mt-md flex gap-s"><span class="sn-tag">습관</span><span class="sn-tag sn-tag-muted">아침</span></div></div><div class="sn-card sn-card-muted w-64"><p class="text-heading">들어간 면</p><p class="mt-xs text-caption text-muted">입력 영역 · 인용 · 요약</p></div></div></div>
+  <div class="border-t border-border">
+<div class="overflow-hidden  bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">div</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-card"</span>&gt;
+  &lt;<span class="text-primary">p</span> <span class="text-muted">class</span>=<span class="text-flame">"text-heading"</span>&gt;오늘의 불씨&lt;/<span class="text-primary">p</span>&gt;
+  &lt;<span class="text-primary">p</span> <span class="text-muted">class</span>=<span class="text-flame">"text-caption text-muted"</span>&gt;12일째 이어지는 중&lt;/<span class="text-primary">p</span>&gt;
+  &lt;<span class="text-primary">span</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-tag"</span>&gt;습관&lt;/<span class="text-primary">span</span>&gt;
+  &lt;<span class="text-primary">span</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-tag sn-tag-muted"</span>&gt;아침&lt;/<span class="text-primary">span</span>&gt;
+&lt;/<span class="text-primary">div</span>&gt;
+&lt;<span class="text-primary">div</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-card sn-card-muted"</span>&gt;...&lt;/<span class="text-primary">div</span>&gt;</code></pre>
+</div></div>
+</div></section><section id="inputs" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#inputs">입력창</a></h2>
+<div class="mt-lg overflow-hidden rounded-xl border border-border">
+  <div class="flex flex-wrap items-center justify-center gap-xl bg-surface-muted px-lg py-xl"><div class="w-72 space-y-s"><input class="sn-input" placeholder="오늘 할 일" /><div class="flex gap-s"><input class="sn-input" placeholder="이메일" /><button class="sn-btn sn-btn-primary">구독</button></div></div></div>
+  <div class="border-t border-border">
+<div class="overflow-hidden  bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">input</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-input"</span> placeholder="오늘 할 일" /&gt;</code></pre>
+</div></div>
+</div></section><section id="plain" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#plain">Tailwind 없이</a></h2><p class="mt-md text-body leading-7 text-muted"><code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">sonia-ui/base.css</code>를 가져오면 같은 클래스를 쓴다. 글자는 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">text-title</code> 대신 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">sn-text-title</code>.</p>
+<div class="overflow-hidden rounded-lg border border-border bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">div</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-card"</span>&gt;
+  &lt;<span class="text-primary">h2</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-text-heading"</span>&gt;제목&lt;/<span class="text-primary">h2</span>&gt;
+  &lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"sn-btn sn-btn-primary"</span>&gt;저장&lt;/<span class="text-primary">button</span>&gt;
+&lt;/<span class="text-primary">div</span>&gt;</code></pre>
+</div></section>
+        
+        <div class="mt-hg flex justify-between border-t border-border pt-xl text-label">
+          <a href="customizing.html" class="text-muted hover:text-foreground">← 값 고치기</a>
+          <a href="colors.html" class="text-muted hover:text-foreground">색 →</a>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto py-xxl pr-xl xl:block">
+      <p class="text-label text-foreground">이 페이지</p>
+      <ul class="mt-md space-y-s text-caption"><li><a href="#reference" class="text-muted hover:text-foreground">빠른 참조</a></li><li><a href="#buttons" class="text-muted hover:text-foreground">버튼</a></li><li><a href="#sizes" class="text-muted hover:text-foreground">크기 · 모양</a></li><li><a href="#cards" class="text-muted hover:text-foreground">카드</a></li><li><a href="#inputs" class="text-muted hover:text-foreground">입력창</a></li><li><a href="#plain" class="text-muted hover:text-foreground">Tailwind 없이</a></li></ul>
+    </aside>
+  </div>
+
+  <script>
+    document.getElementById("menu").onclick = () => document.getElementById("sidebar").classList.toggle("hidden");
+    for (const w of document.querySelectorAll(".table-wrap.collapsed")) {
+      w.querySelector(".more button").onclick = () => { w.classList.remove("collapsed"); w.querySelector(".more").remove(); };
+    }
+  </script>
+  <script src="../theme.js"></script>
+</body>
+</html>

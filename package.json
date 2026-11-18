@@ -20,7 +20,8 @@
     "./tokens": "./src/tokens/index.ts",
     "./native": "./src/native/index.ts",
     "./tailwind.css": "./src/tailwind/theme.css",
-    "./themes.css": "./src/css/themes.css"
+    "./themes.css": "./src/css/themes.css",
+    "./base.css": "./src/css/base.css"
   },
   "peerDependenciesMeta": {
     "@shopify/restyle": {

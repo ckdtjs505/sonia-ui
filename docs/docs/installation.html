@@ -34,6 +34,10 @@
     <li><a href="themes.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">테마</a></li>
     <li><a href="customizing.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">값 고치기</a></li>
   </ul>
+  <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">컴포넌트</h5>
+  <ul class="space-y-xs border-l border-border">
+    <li><a href="components.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">버튼 · 카드 · 태그</a></li>
+  </ul>
   <h5 class="mb-s mt-xl text-label text-foreground first:mt-0">색</h5>
   <ul class="space-y-xs border-l border-border">
     <li><a href="colors.html" class="-ml-px block border-l py-[3px] pl-md text-caption border-transparent text-muted hover:border-muted hover:text-foreground">색</a></li>
@@ -85,7 +89,18 @@
   &lt;<span class="text-primary">button</span> <span class="text-muted">class</span>=<span class="text-flame">"mt-lg rounded-pill bg-primary px-lg py-s text-label text-on-primary"</span>&gt;시작&lt;/<span class="text-primary">button</span>&gt;
 &lt;/<span class="text-primary">div</span>&gt;</code></pre>
 </div></div>
-</div></section><section id="frameworks" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#frameworks">프레임워크별</a></h2><p class="mt-md text-body leading-7 text-muted"><b class="text-foreground">Vite</b>: <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">@tailwindcss/vite</code> 플러그인만 켜면 된다. <b class="text-foreground">Next.js</b>: <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">next.config</code>에 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">transpilePackages: ["sonia-ui"]</code>를 넣는다.</p></section>
+</div></section><section id="frameworks" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#frameworks">프레임워크별</a></h2><p class="mt-md text-body leading-7 text-muted"><b class="text-foreground">Vite</b>: <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">@tailwindcss/vite</code> 플러그인만 켜면 된다. <b class="text-foreground">Next.js</b>: <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">next.config</code>에 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">transpilePackages: ["sonia-ui"]</code>를 넣는다.</p></section><section id="font" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#font">글꼴</a></h2><p class="mt-md text-body leading-7 text-muted">기본 글꼴은 Pretendard다. <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">&lt;head&gt;</code>에 한 줄 넣으면 되고, 없으면 시스템 글꼴로 보인다.</p>
+<div class="overflow-hidden rounded-lg border border-border bg-surface">
+  <div class="border-b border-border px-lg py-s text-micro">index.html</div>
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>&lt;<span class="text-primary">link</span> rel="stylesheet" href="https:<span class="text-muted">//cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" /&gt;</span></code></pre>
+</div></section><section id="plain-css" class="scroll-mt-24"><h2 class="mt-xxl text-heading text-foreground"><a href="#plain-css">Tailwind 없이</a></h2><p class="mt-md text-body leading-7 text-muted">순수 HTML·CSS 프로젝트는 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">sonia-ui/base.css</code> 하나만 가져온다. 색 변수, 기본 모양, <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">sn-</code> 컴포넌트, 글자 클래스(<code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">sn-text-title</code>)가 다 들어 있다. 모두 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">@layer sonia</code> 안에 있어서 프로젝트가 직접 쓴 CSS가 항상 이긴다.</p>
+<div class="overflow-hidden rounded-lg border border-border bg-surface">
+  
+  <pre class="overflow-x-auto p-lg text-caption leading-relaxed text-foreground"><code>import "sonia-ui/base.css";
+
+<span class="text-muted">/* 또는 */</span>
+&lt;<span class="text-primary">link</span> rel="stylesheet" href="node_modules/sonia-ui/src/css/base.css" /&gt;</code></pre>
+</div><p class="mt-md text-body leading-7 text-muted">변수만 필요하면 <code class="rounded-xs bg-surface-muted px-xs py-[1px] text-label text-foreground">sonia-ui/themes.css</code>.</p></section>
         
         <div class="mt-hg flex justify-between border-t border-border pt-xl text-label">
           <span></span>
@@ -96,7 +111,7 @@
 
     <aside class="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto py-xxl pr-xl xl:block">
       <p class="text-label text-foreground">이 페이지</p>
-      <ul class="mt-md space-y-s text-caption"><li><a href="#install" class="text-muted hover:text-foreground">1. 패키지 설치</a></li><li><a href="#import" class="text-muted hover:text-foreground">2. CSS에 가져오기</a></li><li><a href="#theme" class="text-muted hover:text-foreground">3. 테마 고르기</a></li><li><a href="#use" class="text-muted hover:text-foreground">4. 클래스 쓰기</a></li><li><a href="#frameworks" class="text-muted hover:text-foreground">프레임워크별</a></li></ul>
+      <ul class="mt-md space-y-s text-caption"><li><a href="#install" class="text-muted hover:text-foreground">1. 패키지 설치</a></li><li><a href="#import" class="text-muted hover:text-foreground">2. CSS에 가져오기</a></li><li><a href="#theme" class="text-muted hover:text-foreground">3. 테마 고르기</a></li><li><a href="#use" class="text-muted hover:text-foreground">4. 클래스 쓰기</a></li><li><a href="#frameworks" class="text-muted hover:text-foreground">프레임워크별</a></li><li><a href="#font" class="text-muted hover:text-foreground">글꼴</a></li><li><a href="#plain-css" class="text-muted hover:text-foreground">Tailwind 없이</a></li></ul>
     </aside>
   </div>
 

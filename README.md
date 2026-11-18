@@ -25,12 +25,23 @@ npm i github:ckdtjs505/sonia-ui
 ## Tailwind 없는 웹
 
 ```js
-import "sonia-ui/themes.css"; // --color-primary, --spacing-lg ... 와 data-theme별 값
+import "sonia-ui/base.css"; // 색 변수 + 기본 모양 + sn-* 컴포넌트 (@layer sonia라 내 CSS가 항상 이김)
 ```
 
-```css
-.card { background: var(--color-surface); padding: var(--spacing-lg); }
+```html
+<div class="sn-card">
+  <h2 class="sn-text-heading">제목</h2>
+  <button class="sn-btn sn-btn-primary">저장</button>
+</div>
 ```
+
+변수만 필요하면 `sonia-ui/themes.css`.
+
+## 컴포넌트 (웹 공통)
+
+`sn-btn` + `sn-btn-primary | soft | outline | ghost` (`sn-btn-sm | lg | pill`) · `sn-card` (`sn-card-muted`) · `sn-tag` (`sn-tag-muted`) · `sn-input`
+
+글꼴은 Pretendard: `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">`
 
 ## 앱 (Expo)
 
@@ -60,4 +71,4 @@ import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
 
 ## 값 고치기
 
-`src/tokens/`만 고치고 `npm run build` → `src/tailwind/theme.css`와 문서가 다시 만들어진다.
+값은 `src/tokens/`, 모양은 `src/styles/`만 고치고 `npm run build` → `src/tailwind/theme.css`와 문서가 다시 만들어진다.

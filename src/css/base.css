@@ -1,0 +1,339 @@
+/* 자동 생성 파일 — scripts/build-css.ts. 직접 고치지 말 것. */
+:root {
+  --color-background: #F6F3EE;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #EFEAE3;
+  --color-foreground: #1F1B17;
+  --color-muted: #6E655C;
+  --color-border: rgba(31,27,23,0.09);
+  --color-primary: #C9461A;
+  --color-primary-soft: rgba(201,70,26,0.10);
+  --color-on-primary: #FFFFFF;
+  --color-flame: #F0521F;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --spacing-0: 0px;
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 48px;
+  --spacing-hg: 128px;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --text-display: 34px;
+  --text-display--font-weight: 900;
+  --text-display--letter-spacing: -0.8px;
+  --text-title: 26px;
+  --text-title--font-weight: 800;
+  --text-title--letter-spacing: -0.6px;
+  --text-heading: 19px;
+  --text-heading--font-weight: 700;
+  --text-heading--letter-spacing: -0.3px;
+  --text-body: 15px;
+  --text-body--font-weight: 500;
+  --text-caption: 13px;
+  --text-label: 13px;
+  --text-label--font-weight: 700;
+  --text-stat: 15px;
+  --text-stat--font-weight: 800;
+  --text-micro: 11px;
+  --text-micro--font-weight: 600;
+  --text-overline: 12px;
+  --text-overline--font-weight: 700;
+  --text-overline--letter-spacing: 0.4px;
+  color-scheme: light;
+}
+
+[data-theme="light"] {
+  --color-background: #F6F3EE;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #EFEAE3;
+  --color-foreground: #1F1B17;
+  --color-muted: #6E655C;
+  --color-border: rgba(31,27,23,0.09);
+  --color-primary: #C9461A;
+  --color-primary-soft: rgba(201,70,26,0.10);
+  --color-on-primary: #FFFFFF;
+  --color-flame: #F0521F;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --color-background: #141211;
+  --color-surface: #1E1B19;
+  --color-surface-muted: #282421;
+  --color-foreground: #F4EFE9;
+  --color-muted: #A39A91;
+  --color-border: rgba(244,239,233,0.08);
+  --color-primary: #FF7A3D;
+  --color-primary-soft: rgba(255,122,61,0.14);
+  --color-on-primary: #1A0E08;
+  --color-flame: #FF6A2C;
+  color-scheme: dark;
+}
+
+[data-theme="nature"] {
+  --color-background: #EDF1E8;
+  --color-surface: #F9FBF6;
+  --color-surface-muted: #E2E8DA;
+  --color-foreground: #1D2A1E;
+  --color-muted: #5C6A55;
+  --color-border: rgba(29,42,30,0.09);
+  --color-primary: #2F7A4B;
+  --color-primary-soft: rgba(47,122,75,0.11);
+  --color-on-primary: #FFFFFF;
+  --color-flame: #E0571F;
+  color-scheme: light;
+}
+
+[data-theme="ocean"] {
+  --color-background: #0B1822;
+  --color-surface: #12232F;
+  --color-surface-muted: #1A2F3D;
+  --color-foreground: #E7F1F6;
+  --color-muted: #8EA6B4;
+  --color-border: rgba(231,241,246,0.08);
+  --color-primary: #4CB6DD;
+  --color-primary-soft: rgba(76,182,221,0.14);
+  --color-on-primary: #06141C;
+  --color-flame: #FF7A45;
+  color-scheme: dark;
+}
+
+[data-theme="sunset"] {
+  --color-background: #24120F;
+  --color-surface: #321A16;
+  --color-surface-muted: #3E221D;
+  --color-foreground: #FFEDE4;
+  --color-muted: #CFA295;
+  --color-border: rgba(255,237,228,0.09);
+  --color-primary: #FF8A4C;
+  --color-primary-soft: rgba(255,138,76,0.16);
+  --color-on-primary: #2A0F05;
+  --color-flame: #FF9A5C;
+  color-scheme: dark;
+}
+
+[data-theme="sepia"] {
+  --color-background: #F3EADB;
+  --color-surface: #FBF6EC;
+  --color-surface-muted: #E9DDC9;
+  --color-foreground: #3A2A1B;
+  --color-muted: #6F5A44;
+  --color-border: rgba(58,42,27,0.10);
+  --color-primary: #B05A1E;
+  --color-primary-soft: rgba(176,90,30,0.11);
+  --color-on-primary: #FFFFFF;
+  --color-flame: #D2541C;
+  color-scheme: light;
+}
+
+[data-theme="ember"] {
+  --color-background: #0F0B0A;
+  --color-surface: #1C1311;
+  --color-surface-muted: #291A16;
+  --color-foreground: #FFE9DC;
+  --color-muted: #C29280;
+  --color-border: rgba(255,120,70,0.14);
+  --color-primary: #FF5A1F;
+  --color-primary-soft: rgba(255,90,31,0.18);
+  --color-on-primary: #1F0800;
+  --color-flame: #FF4A12;
+  color-scheme: dark;
+}
+
+[data-theme="gold"] {
+  --color-background: #16110A;
+  --color-surface: #221A0F;
+  --color-surface-muted: #2E2314;
+  --color-foreground: #FFF4DA;
+  --color-muted: #C9B48A;
+  --color-border: rgba(255,206,110,0.14);
+  --color-primary: #FFC23D;
+  --color-primary-soft: rgba(255,194,61,0.16);
+  --color-on-primary: #2A1A00;
+  --color-flame: #FFB020;
+  color-scheme: dark;
+}
+
+[data-theme="sonia"] {
+  --color-background: #0D1117;
+  --color-surface: #161B22;
+  --color-surface-muted: rgba(110,118,129,0.3);
+  --color-foreground: #E6EDF3;
+  --color-muted: #8B949E;
+  --color-border: rgba(48,54,61,0.5);
+  --color-primary: #58A6FF;
+  --color-primary-soft: rgba(88,166,255,0.1);
+  --color-on-primary: #0D1117;
+  --color-flame: #E3B341;
+  color-scheme: dark;
+}
+
+@layer sonia {
+  /* 요소 기본 모양. 값은 모두 sonia-ui 변수에서 온다.
+     빌드하면 순수 CSS(base.css)에는 @layer sonia 안에, Tailwind(tailwind.css)에는 @layer base 안에 들어간다.
+     레이어 안에 있으므로 프로젝트가 직접 쓴 CSS가 항상 이긴다. */
+
+  body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  code, kbd, pre, samp {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* 컴포넌트 클래스. 기존 프로젝트의 .btn·.tag와 겹치지 않게 sn- 을 붙인다.
+     빌드하면 순수 CSS에는 @layer sonia 안에, Tailwind에는 @layer components 안에 들어간다. */
+
+  /* 버튼: sn-btn + 모양 하나 (sn-btn-primary · sn-btn-soft · sn-btn-outline · sn-btn-ghost) */
+  .sn-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-s);
+    padding: var(--spacing-s) var(--spacing-lg);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font: inherit;
+    font-size: var(--text-label);
+    font-weight: var(--text-label--font-weight);
+    line-height: 1.4;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .sn-btn:disabled,
+  .sn-btn[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .sn-btn-sm { padding: var(--spacing-xs) var(--spacing-md); }
+  .sn-btn-lg { padding: var(--spacing-md) var(--spacing-xl); font-size: var(--text-body); }
+  .sn-btn-pill { border-radius: var(--radius-pill); }
+
+  .sn-btn-primary { background: var(--color-primary); color: var(--color-on-primary); }
+  .sn-btn-primary:hover { background: color-mix(in srgb, var(--color-primary) 88%, var(--color-foreground)); }
+
+  .sn-btn-soft { background: var(--color-primary-soft); color: var(--color-primary); }
+  .sn-btn-soft:hover { background: color-mix(in srgb, var(--color-primary) 20%, transparent); }
+
+  .sn-btn-outline { border-color: var(--color-border); background: transparent; color: var(--color-foreground); }
+  .sn-btn-outline:hover { background: var(--color-surface-muted); }
+
+  .sn-btn-ghost { background: transparent; color: var(--color-muted); }
+  .sn-btn-ghost:hover { background: var(--color-surface-muted); color: var(--color-foreground); }
+
+  /* 카드: 바탕 위에 떠 있는 면 */
+  .sn-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+  }
+  .sn-card-muted {
+    background: var(--color-surface-muted);
+    border-color: transparent;
+  }
+
+  /* 태그·칩 */
+  .sn-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 2px var(--spacing-md);
+    border-radius: var(--radius-pill);
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-size: var(--text-label);
+    font-weight: var(--text-label--font-weight);
+    line-height: 1.6;
+    text-decoration: none;
+  }
+  .sn-tag-muted {
+    background: var(--color-surface-muted);
+    color: var(--color-muted);
+  }
+
+  /* 입력창 */
+  .sn-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--spacing-s) var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-muted);
+    color: var(--color-foreground);
+    font: inherit;
+    font-size: var(--text-body);
+  }
+  .sn-input::placeholder { color: var(--color-muted); }
+  .sn-input:focus { outline: 2px solid var(--color-primary); outline-offset: -1px; }
+
+  .sn-text-display {
+    font-size: var(--text-display);
+    font-weight: var(--text-display--font-weight);
+    letter-spacing: var(--text-display--letter-spacing);
+  }
+  .sn-text-title {
+    font-size: var(--text-title);
+    font-weight: var(--text-title--font-weight);
+    letter-spacing: var(--text-title--letter-spacing);
+  }
+  .sn-text-heading {
+    font-size: var(--text-heading);
+    font-weight: var(--text-heading--font-weight);
+    letter-spacing: var(--text-heading--letter-spacing);
+  }
+  .sn-text-body {
+    font-size: var(--text-body);
+    font-weight: var(--text-body--font-weight);
+  }
+  .sn-text-caption {
+    font-size: var(--text-caption);
+  }
+  .sn-text-label {
+    font-size: var(--text-label);
+    font-weight: var(--text-label--font-weight);
+  }
+  .sn-text-stat {
+    font-size: var(--text-stat);
+    font-weight: var(--text-stat--font-weight);
+  }
+  .sn-text-micro {
+    font-size: var(--text-micro);
+    font-weight: var(--text-micro--font-weight);
+  }
+  .sn-text-overline {
+    font-size: var(--text-overline);
+    font-weight: var(--text-overline--font-weight);
+    letter-spacing: var(--text-overline--letter-spacing);
+  }
+}

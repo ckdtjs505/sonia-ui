@@ -10,7 +10,8 @@
   --color-primary-soft: rgba(201,70,26,0.10);
   --color-on-primary: #FFFFFF;
   --color-flame: #F0521F;
-  color-scheme: light;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --spacing-0: 0px;
   --spacing-xs: 4px;
   --spacing-s: 8px;
@@ -25,6 +26,28 @@
   --radius-lg: 24px;
   --radius-xl: 32px;
   --radius-pill: 999px;
+  --text-display: 34px;
+  --text-display--font-weight: 900;
+  --text-display--letter-spacing: -0.8px;
+  --text-title: 26px;
+  --text-title--font-weight: 800;
+  --text-title--letter-spacing: -0.6px;
+  --text-heading: 19px;
+  --text-heading--font-weight: 700;
+  --text-heading--letter-spacing: -0.3px;
+  --text-body: 15px;
+  --text-body--font-weight: 500;
+  --text-caption: 13px;
+  --text-label: 13px;
+  --text-label--font-weight: 700;
+  --text-stat: 15px;
+  --text-stat--font-weight: 800;
+  --text-micro: 11px;
+  --text-micro--font-weight: 600;
+  --text-overline: 12px;
+  --text-overline--font-weight: 700;
+  --text-overline--letter-spacing: 0.4px;
+  color-scheme: light;
 }
 
 [data-theme="light"] {

@@ -1,0 +1,30 @@
+/* 요소 기본 모양. 값은 모두 sonia-ui 변수에서 온다.
+   빌드하면 순수 CSS(base.css)에는 @layer sonia 안에, Tailwind(tailwind.css)에는 @layer base 안에 들어간다.
+   레이어 안에 있으므로 프로젝트가 직접 쓴 CSS가 항상 이긴다. */
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+code, kbd, pre, samp {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 30%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
