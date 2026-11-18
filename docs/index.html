@@ -143,65 +143,32 @@
       <a href="docs/components.html" class="mt-md inline-block text-caption text-primary underline underline-offset-2">크기·pill·카드까지 전체 보기</a>
     </section>
 
-    <!-- 색 -->
-    <section id="colors" class="scroll-mt-24">
-      <h2 class="text-title">색은 역할로 부른다</h2>
-      <p class="mt-s text-body text-muted">모든 테마가 같은 이름을 갖고 값만 다르다. <code class="text-foreground">bg-*</code> · <code class="text-foreground">text-*</code> · <code class="text-foreground">border-*</code> 어디에나 붙는다.</p>
-      <div class="mt-lg grid grid-cols-2 gap-md sm:grid-cols-3 lg:grid-cols-5">
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-background"></div><p class="bg-surface p-md text-label">background</p></div>
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-surface"></div><p class="bg-surface p-md text-label">surface</p></div>
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-surface-muted"></div><p class="bg-surface p-md text-label">surface-muted</p></div>
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-foreground"></div><p class="bg-surface p-md text-label">foreground</p></div>
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-muted"></div><p class="bg-surface p-md text-label">muted</p></div>
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-border"></div><p class="bg-surface p-md text-label">border</p></div>
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-primary"></div><p class="bg-surface p-md text-label">primary</p></div>
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-primary-soft"></div><p class="bg-surface p-md text-label">primary-soft</p></div>
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-on-primary"></div><p class="bg-surface p-md text-label">on-primary</p></div>
-        <div class="overflow-hidden rounded-md border border-border"><div class="h-20 bg-flame"></div><p class="bg-surface p-md text-label">flame</p></div>
-      </div>
+    <!-- 이미 쓰는 곳 -->
+    <section aria-labelledby="used-title">
+      <h2 id="used-title" class="text-title">이미 이 값으로 돌아가는 곳</h2>
+      <ul class="mt-lg grid gap-md sm:grid-cols-2 lg:grid-cols-4">
+        <li class="sn-card"><p class="text-heading">self-fire</p><p class="mt-xs text-caption text-muted">Expo 앱 · <code class="text-foreground">sonia-ui/native</code></p></li>
+        <li class="sn-card"><p class="text-heading"><a href="https://ckdtjs505.github.io" class="hover:text-primary">Sonia.dev 블로그</a></p><p class="mt-xs text-caption text-muted">웹 · <code class="text-foreground">themes.css</code></p></li>
+        <li class="sn-card"><p class="text-heading">planner</p><p class="mt-xs text-caption text-muted">웹 · <code class="text-foreground">base.css</code> 인라인</p></li>
+        <li class="sn-card"><p class="text-heading">이 문서 사이트</p><p class="mt-xs text-caption text-muted">웹 · <code class="text-foreground">tailwind.css</code></p></li>
+      </ul>
     </section>
 
-    <!-- 간격 · 모서리 -->
-    <section id="spacing" class="scroll-mt-24">
-      <h2 class="text-title">이름으로 고르는 간격</h2>
-      <p class="mt-s text-body text-muted"><code class="text-foreground">p-lg</code>, <code class="text-foreground">gap-md</code>, <code class="text-foreground">mt-xl</code>처럼 쓴다. Tailwind 기본 숫자(<code class="text-foreground">p-4</code>)도 그대로 된다.</p>
-      <div class="mt-lg grid gap-xl md:grid-cols-2">
-        <div class="space-y-s rounded-lg border border-border bg-surface p-lg">
-          <div class="flex items-center gap-md"><code class="w-12 text-caption">xs</code><div class="h-3 w-xs rounded-xs bg-primary"></div><span class="text-micro">4px</span></div>
-          <div class="flex items-center gap-md"><code class="w-12 text-caption">s</code><div class="h-3 w-s rounded-xs bg-primary"></div><span class="text-micro">8px</span></div>
-          <div class="flex items-center gap-md"><code class="w-12 text-caption">md</code><div class="h-3 w-md rounded-xs bg-primary"></div><span class="text-micro">12px</span></div>
-          <div class="flex items-center gap-md"><code class="w-12 text-caption">lg</code><div class="h-3 w-lg rounded-xs bg-primary"></div><span class="text-micro">16px</span></div>
-          <div class="flex items-center gap-md"><code class="w-12 text-caption">xl</code><div class="h-3 w-xl rounded-xs bg-primary"></div><span class="text-micro">24px</span></div>
-          <div class="flex items-center gap-md"><code class="w-12 text-caption">xxl</code><div class="h-3 w-xxl rounded-xs bg-primary"></div><span class="text-micro">48px</span></div>
-          <div class="flex items-center gap-md"><code class="w-12 text-caption">hg</code><div class="h-3 w-hg rounded-xs bg-primary"></div><span class="text-micro">128px</span></div>
-        </div>
-        <div class="grid grid-cols-3 gap-md">
-          <div class="flex aspect-square flex-col items-center justify-center gap-xs rounded-xs bg-surface-muted"><code class="text-label">xs</code><span class="text-micro">6px</span></div>
-          <div class="flex aspect-square flex-col items-center justify-center gap-xs rounded-sm bg-surface-muted"><code class="text-label">sm</code><span class="text-micro">10px</span></div>
-          <div class="flex aspect-square flex-col items-center justify-center gap-xs rounded-md bg-surface-muted"><code class="text-label">md</code><span class="text-micro">16px</span></div>
-          <div class="flex aspect-square flex-col items-center justify-center gap-xs rounded-lg bg-surface-muted"><code class="text-label">lg</code><span class="text-micro">24px</span></div>
-          <div class="flex aspect-square flex-col items-center justify-center gap-xs rounded-xl bg-surface-muted"><code class="text-label">xl</code><span class="text-micro">32px</span></div>
-          <div class="flex aspect-square flex-col items-center justify-center gap-xs rounded-pill bg-surface-muted"><code class="text-label">pill</code><span class="text-micro">999px</span></div>
-        </div>
+    <!-- 토큰 한눈에: 자세한 표는 문서로 -->
+    <section aria-labelledby="tokens-title" class="space-y-xl">
+      <div>
+        <h2 id="tokens-title" class="text-title">이름만 알면 된다</h2>
+        <p class="mt-s text-body text-muted">색은 역할로, 간격·모서리·글자는 단계 이름으로 부른다. 웹과 앱이 같은 이름이다 (<code class="text-foreground">p-lg</code> ↔ <code class="text-foreground">padding="lg"</code>).</p>
       </div>
-    </section>
-
-    <!-- 글자 -->
-    <section id="type" class="scroll-mt-24">
-      <h2 class="text-title">크기·굵기·자간을 한 번에</h2>
-      <p class="mt-s text-body text-muted"><code class="text-foreground">text-title</code> 하나가 26px · 800 · -0.6px을 같이 건다. 앱의 <code class="text-foreground">&lt;Text variant="title"&gt;</code>과 같은 값.</p>
-      <div class="mt-lg divide-y divide-border rounded-lg border border-border bg-surface">
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-hero</code><span class="text-hero">같은 결로</span></div>
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-display</code><span class="text-display">42</span></div>
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-title</code><span class="text-title">화면 제목</span></div>
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-heading</code><span class="text-heading">시트 · 섹션 제목</span></div>
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-body</code><span class="text-body">본문은 이 크기로 읽는다.</span></div>
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-stat</code><span class="text-stat">1,024</span></div>
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-label</code><span class="text-label">버튼 · 칩 라벨</span></div>
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-caption</code><span class="text-caption text-muted">설명 · 작성자</span></div>
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-overline</code><span class="text-overline uppercase text-muted">섹션 머리말</span></div>
-        <div class="flex items-baseline gap-lg p-lg"><code class="w-28 shrink-0 text-caption">text-micro</code><span class="text-micro text-muted">월 화 수 목 금</span></div>
+      <div id="colors" class="scroll-mt-24">
+        <div class="flex flex-wrap items-baseline justify-between gap-s"><h3 class="text-heading">색 10가지 역할</h3><a href="docs/colors.html" class="text-caption text-primary underline underline-offset-2">값 전체 보기</a></div>
+        <div class="mt-md grid grid-cols-5 gap-s lg:grid-cols-10"><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-background"></div><p class="mt-xs truncate text-micro text-muted">background</p></div><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-surface"></div><p class="mt-xs truncate text-micro text-muted">surface</p></div><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-surface-muted"></div><p class="mt-xs truncate text-micro text-muted">surface-muted</p></div><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-foreground"></div><p class="mt-xs truncate text-micro text-muted">foreground</p></div><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-muted"></div><p class="mt-xs truncate text-micro text-muted">muted</p></div><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-border"></div><p class="mt-xs truncate text-micro text-muted">border</p></div><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-primary"></div><p class="mt-xs truncate text-micro text-muted">primary</p></div><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-primary-soft"></div><p class="mt-xs truncate text-micro text-muted">primary-soft</p></div><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-on-primary"></div><p class="mt-xs truncate text-micro text-muted">on-primary</p></div><div class="min-w-0"><div class="h-12 rounded-sm border border-border bg-flame"></div><p class="mt-xs truncate text-micro text-muted">flame</p></div></div>
       </div>
+      <dl id="spacing" class="grid scroll-mt-24 gap-lg md:grid-cols-3">
+        <div><dt class="text-heading">간격</dt><dd class="mt-xs text-caption text-muted"><code class="text-foreground">xs s md lg xl xxl hg</code> · 4~128px · <a href="docs/padding.html" class="text-primary underline underline-offset-2">보기</a></dd></div>
+        <div><dt class="text-heading">모서리</dt><dd class="mt-xs text-caption text-muted"><code class="text-foreground">xs sm md lg xl pill</code> · 6~999px · <a href="docs/border-radius.html" class="text-primary underline underline-offset-2">보기</a></dd></div>
+        <div id="type" class="scroll-mt-24"><dt class="text-heading">글자</dt><dd class="mt-xs text-caption text-muted"><code class="text-foreground">hero display title heading body …</code> · 크기·굵기·자간을 한 번에 · <a href="docs/font-size.html" class="text-primary underline underline-offset-2">보기</a></dd></div>
+      </dl>
     </section>
 
     <!-- 앱 -->
@@ -220,9 +187,14 @@ import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
   </main>
 
   <footer class="border-t border-border">
-    <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-md px-lg py-xl text-caption">
-      <span>sonia-ui · 값은 <code>src/tokens</code> 한 곳에서 고친다</span>
-      <a href="https://github.com/ckdtjs505/sonia-ui" class="hover:text-foreground">GitHub</a>
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-lg px-lg py-xl">
+      <p class="text-body">시작은 <a href="#start" class="text-primary underline underline-offset-2">세 가지 방법</a> 중 하나로.</p>
+      <nav aria-label="바닥 링크" class="flex flex-wrap gap-lg text-caption text-muted">
+        <a href="docs/installation.html" class="hover:text-foreground">문서</a>
+        <a href="docs/ai.html" class="hover:text-foreground">AI</a>
+        <a href="llms-full.txt" class="hover:text-foreground">llms-full.txt</a>
+        <a href="https://github.com/ckdtjs505/sonia-ui" class="hover:text-foreground">GitHub</a>
+      </nav>
     </div>
   </footer>
 
