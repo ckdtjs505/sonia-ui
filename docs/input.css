@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "../src/tailwind/theme.css";
+@source "./index.html";
+
+@layer base {
+  html { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; }
+  body { @apply bg-background text-foreground antialiased; }
+  pre, code { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+}

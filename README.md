@@ -1,12 +1,26 @@
 # sonia-ui
 
-내 모든 앱이 함께 쓰는 디자인 시스템. 색·간격·글자 스타일을 한 곳에서 관리한다.
-TS 소스를 그대로 배포하므로 쓰는 쪽 번들러(Metro·Vite·Next)가 빌드한다.
+내 모든 앱이 함께 쓰는 디자인 시스템. **Tailwind 클래스로 쓴다.**
+문서: https://ckdtjs505.github.io/sonia-ui/
 
-| 경로 | 무엇 | 어디서 |
-|---|---|---|
-| `sonia-ui/tokens` | 테마 8종 값, `getTheme`, `themeList`, `toCssVars` | 웹·앱 모두 |
-| `sonia-ui/native` | tokens 전부 + `Box` `Text` `SafeAreaView` `ThemeProvider` `useAppTheme` | React Native(Expo) |
+## 웹 (Tailwind v4)
+
+```sh
+npm i github:ckdtjs505/sonia-ui
+```
+
+```css
+/* app.css */
+@import "tailwindcss";
+@import "sonia-ui/tailwind.css";
+```
+
+```html
+<html data-theme="dark">
+<div class="rounded-md bg-surface p-lg">
+  <h1 class="text-title">안녕</h1>
+</div>
+```
 
 ## 앱 (Expo)
 
@@ -18,33 +32,22 @@ npm i github:ckdtjs505/sonia-ui @shopify/restyle react-native-safe-area-context
 import { ThemeProvider, getTheme, Box, Text } from "sonia-ui/native";
 
 <ThemeProvider theme={getTheme("dark")}>
-  <Box flex={1} backgroundColor="$background" padding="lg">
+  <Box backgroundColor="$background" padding="lg">
     <Text variant="title">안녕</Text>
   </Box>
 </ThemeProvider>
 ```
 
-Jest를 쓰면 `transformIgnorePatterns`의 허용 목록에 `sonia-ui`를 넣는다.
+## 이름
 
-## 웹 (React · Vite · Next)
+| 종류 | 웹 클래스 | 앱 |
+|---|---|---|
+| 색 | `bg-primary` `text-muted` `border-border` … | `"$primary"` |
+| 간격 | `p-lg` `gap-md` (`xs s md lg xl xxl hg`) | `padding="lg"` |
+| 모서리 | `rounded-md` (`xs sm md lg xl pill`) | `borderRadius="md"` |
+| 글자 | `text-title` (`display title heading body stat label caption overline micro`) | `variant="title"` |
+| 테마 | `data-theme="dark"` (`light dark nature ocean sunset sepia ember gold`) | `getTheme("dark")` |
 
-```sh
-npm i github:ckdtjs505/sonia-ui
-```
+## 값 고치기
 
-```tsx
-import { getTheme, toCssVars } from "sonia-ui/tokens";
-
-<div style={toCssVars(getTheme("dark"))}>
-  <h1 style={{ color: "var(--primary)", padding: "var(--space-lg)" }}>안녕</h1>
-</div>
-```
-
-Next는 `next.config`에 `transpilePackages: ["sonia-ui"]`를 넣는다.
-
-## 값
-
-- 색 변수: `background surface surfaceMuted foreground muted border primary primarySoft onPrimary flame`
-- 간격 `--space-*`: `0 xs s md lg xl xxl hg` / 모서리 `--radius-*`: `xs sm md lg xl pill`
-- 글자 variant(native): `display title heading body caption label stat micro overline`
-- 새 테마: `{ ...light, colors: makeColors({...}) }`
+`src/tokens/`만 고치고 `npm run build` → `src/tailwind/theme.css`와 문서가 다시 만들어진다.
