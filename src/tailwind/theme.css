@@ -183,11 +183,19 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     line-height: 1.6;
+    word-break: keep-all;
+    overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2 {
+    text-wrap: balance;
   }
 
   code, kbd, pre, samp {
     font-family: var(--font-mono);
+    word-break: normal;
+    overflow-wrap: normal;
   }
 
   ::selection {
