@@ -67,7 +67,7 @@ const theme = {
     muted: "#6E655C",
     border: "rgba(31,27,23,0.09)",
     primary: "#B74018",
-    primarySoft: "rgba(183,64,24,0.10)",
+    primarySoft: "rgba(183,64,24,0.07)",
     onPrimary: "#FFFFFF",
     flame: "#F0521F",
   }),

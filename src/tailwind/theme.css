@@ -7,7 +7,7 @@
   --color-muted: #6E655C;
   --color-border: rgba(31,27,23,0.09);
   --color-primary: #B74018;
-  --color-primary-soft: rgba(183,64,24,0.10);
+  --color-primary-soft: rgba(183,64,24,0.07);
   --color-on-primary: #FFFFFF;
   --color-flame: #F0521F;
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
@@ -63,7 +63,7 @@
   --color-muted: #6E655C;
   --color-border: rgba(31,27,23,0.09);
   --color-primary: #B74018;
-  --color-primary-soft: rgba(183,64,24,0.10);
+  --color-primary-soft: rgba(183,64,24,0.07);
   --color-on-primary: #FFFFFF;
   --color-flame: #F0521F;
 }
@@ -89,7 +89,7 @@
   --color-muted: #5C6A55;
   --color-border: rgba(29,42,30,0.09);
   --color-primary: #2C7347;
-  --color-primary-soft: rgba(44,115,71,0.11);
+  --color-primary-soft: rgba(44,115,71,0.07);
   --color-on-primary: #FFFFFF;
   --color-flame: #E0571F;
 }
@@ -128,7 +128,7 @@
   --color-muted: #6F5A44;
   --color-border: rgba(58,42,27,0.10);
   --color-primary: #9C501B;
-  --color-primary-soft: rgba(156,80,27,0.11);
+  --color-primary-soft: rgba(156,80,27,0.06);
   --color-on-primary: #FFFFFF;
   --color-flame: #D2541C;
 }
